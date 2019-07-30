@@ -1,0 +1,172 @@
+.top{
+    background-color: rgb(88, 119, 223);
+    padding: 0pt 10pt
+}
+.navbar-brand{
+    color: white;
+}
+.nav-item{
+    font-size: 11pt;
+    height: 30pt;
+    color: white;
+    margin: 0 10pt;
+}
+.nav-link:hover{
+    color: #b3d7ff;
+    transition: 0.5s;
+}
+.form{
+    margin-right: 80pt;
+}
+.form .form-control{
+    height: 24pt;
+    width: 150pt;
+    font-size: 10pt;
+    padding-left: 15pt; 
+    line-height: 1;
+    border-radius: 15px 0px 0px 15px;
+}
+.form .button-search{
+    height: 24pt;
+    background-color: rgb(137, 157, 224);
+    color: white;
+    line-height: 1;
+    border-radius: 0px;
+}
+.user-account{
+    margin-left: 52pt;
+    color: white;
+}
+.content-left{
+    width: 100%;
+}
+ul.list-group.kategori{
+    padding: 15px;
+    font-size: 11pt;
+}
+.title-group{
+    background-color: #5877df;
+    color: white;
+    text-align: center;
+}
+.item-recommend{
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+.img-recommed{
+    width: 100%;
+    margin-bottom: 5px;
+}
+.item-name{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'Arial';
+    color: black;
+}
+.item-price{
+    color: black;
+}
+.button-detail{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 10pt;
+    background-color: #5877df;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+}
+.button-detail:hover{
+    background-color: #4962b4;
+}
+.promo-banner{
+    padding: 15px;
+    width: 100%;
+    height: 120px;
+}
+.right-content{
+    background: #adadad28;
+    margin-top: 15px;
+    padding: 15px;
+}
+.items-group{
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.card-item{
+    position: relative;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 8px;
+}
+.image-item{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 15%;
+}
+.information{
+    color: black;
+    font-size: 10pt;
+    text-align: center;
+    padding: 4px;
+    height: 86px;
+    width: 100%;
+}
+.image-item-recommendation{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 10px;
+}
+.label{
+    background-color: #df7d7d;
+    width: 100px;
+    height: 25px;
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+    padding: 5px;
+    top: 0;
+    left: 0;
+    color: white;
+    position: absolute;
+    border-radius: 0px 0px 100px 0px;
+}
+/*Login page style*/
+.login-body{
+    background-color: #4962b4;
+    text-align: center;
+    color: white;
+}
+.login-content{
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-welcome{
+    color: white;
+    font-size: 18pt;
+}
+/* Style padding, margin, style font */
+.text-bold{
+    font-weight: bold;
+}
+.text-underline{
+    text-decoration-line: underline;
+}
+.padding-5{
+    padding: 5px;
+}
+.item-detail-button{
+    margin-top: 5px;
+    width: 80%;
+    height: 26px;
+    line-height: 0;
+}
