@@ -3,6 +3,20 @@ $active= 'dashboard';
 include 'layouts/header.php'; 
 include 'scripts/config.php';
 ?>
+<div class="alert alert-warning">
+- MEMBUAT DESAIN PADA TAMPILAN USER <br/>
+- MEMBUAT PERUBAHAN TATA LETAK PADA HALAMAN USER <br/>
+- PENGOPTIMALAN PADA HALAMAN USER
+</div>
+<div class="alert alert-danger">TO DO LIST : <br/> 
+- MEMPERNAIKI SIMBOL YANG TIDAK MUNCUL PADA TAMPILAN TERTENTU <br/>
+- MEMBUAT SCRIPT EDIT, DAN DETAIL PADA DASHBOARD <br/> 
+- MEMBUAT BEBERAPA SCRIPT YANG ADA DI MENU <br/> 
+- MENCARI CARA AGAR GAMBAR BISA DI TAMPILKAN PADA DATABASE <br/> 
+- CEK PAGINASI APAKAH SUDAH BERJALAN DENGAN SEMESTINYA <br/>
+- MENAMBAHKAN KOLOM PADA TABEL DATA BARANG <br/> 
+- MEMBUAT TABEL BARU DI PHP MY ADMIN UNTUK LAPTOP DAN BARANG LAINNYA <br/> 
+- MERUBAH INPUTAN LABEL MENJADI DROPDOWN</div>
 
 <h3><span class="fa fa-briefcase"></span>  Data smartphone</h3>
 <button style="margin-bottom:20px" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="fa fa-add"></span>Tambah smartphone</button>
