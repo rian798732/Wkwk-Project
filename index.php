@@ -8,7 +8,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM smartphone ORDER BY id DESC");
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>SELAMAT DATANG</title>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -46,7 +46,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM smartphone ORDER BY id DESC");
                             </div>
                         </div>
 
-                        <i class="fa fa-user user-account justify-content-end"></i>
+                        <a href="login_page.php"><i class="fa fa-user user-account justify-content-end"></i></a>
                     </nav>
                 </div>
             </div>

@@ -1,13 +1,6 @@
-<?php
-// include database connection file
-include_once("scripts/config.php");
-
-// Get id from URL to delete that user
-$id = $_GET['id'];
-
-// Delete user row from table based on given id
-$result = mysqli_query($mysqli, "DELETE FROM smartphone WHERE id=$id");
-
-// After delete redirect to Home, so that latest user list will be displayed.
-header("Location:list_smartphone.php");
+<?php 
+include 'scripts/config.php';
+$id=$_GET['id'];
+mysqli_query($mysqli, "delete from smartphone where id='$id'");
+header("location:dashboard.php");
 ?>
