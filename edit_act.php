@@ -1,6 +1,6 @@
 <?php 
-
 include 'scripts/config.php';
+$id = $_POST['id'];
 $merek=$_POST['merek'];
 $harga=$_POST['harga'];
 $var_label=$_POST['label'];
@@ -11,7 +11,7 @@ $gambar=$_POST['gambar'];
 $link=$_POST['link'];
 $label = strtoupper($var_label);
 
-mysqli_query($mysqli, "insert into smartphone values('','$merek','$harga','$spek','$gambar','$link','$ram','$internal','$label')")or die(mysqli_error());
+mysqli_query($mysqli, "update smartphone set merk='$merek', harga='$harga', spek='$spek', gambar='$gambar',label='$label', link_tokped='$link', ram='$ram', internal='$internal' where id='$id'");
 header("location:dashboard.php");
 
 ?>

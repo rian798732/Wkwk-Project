@@ -87,6 +87,7 @@
 			<li class=<?php if($active=='tambah_laptop'){echo 'active';}else{echo'noactive';}?>><a href="tambah_laptop.php"><span class="fa fa-briefcase"></span>  Data Barang</a></li>
             <li><a href="barang_laku.php"><span class="fa fa-briefcase"></span>  Tambahkan Smartphone</a></li> 
 			<li><a href="barang_laku.php"><span class="fa fa-briefcase"></span>  Tambahkan Laptop</a></li>        												                   												
+			<li><a href="promo.php"><span class="fa fa-discount"></span> Promo</a></li>
 			<li><a href="ganti_foto.php"><span class="fa fa-picture"></span>  Ganti Foto</a></li>
 			<li><a href="tambah_admin.php"><span class="fa fa-user"></span>  Tambahkan Admin</a></li>
 			<li><a href="ganti_pass.php"><span class="fa fa-lock"></span> Ganti Password</a></li>		

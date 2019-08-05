@@ -915,7 +915,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #962a2a;
   text-decoration: underline;
 }
 a:focus {
@@ -3606,8 +3606,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #eee;
-  border-color: #428bca;
+  background-color: rgb(238, 238, 238);
+  border-color: #ca4242;
 }
 .nav .nav-divider {
   height: 1px;

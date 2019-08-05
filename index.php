@@ -2,7 +2,7 @@
 // Create database connection using config file include_once("config.php"); 
 include_once("scripts/config.php"); 
 // hasil
-$result = mysqli_query($mysqli, "SELECT * FROM smartphone ORDER BY id DESC");
+$hasil = mysqli_query($mysqli, "select * from smartphone");
 ?>
 
 <html lang="en">
@@ -51,54 +51,34 @@ $result = mysqli_query($mysqli, "SELECT * FROM smartphone ORDER BY id DESC");
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
-            <ul class="list-group content-left kategori">
-                <li class="list-group-item title-group">Kategori</li>
-                <li class="list-group-item">Smartphone</li>
-                <li class="list-group-item">Laptop</li>
-                <li class="list-group-item">Aksesoris</li>
-                <li class="list-group-item">Lainnya</li>
-            </ul>
-
-            <ul class="list-group content-left kategori">
-                <li class="list-group-item title-group">Rekomendasi</li>
-                <?php       
-                    while($item_data = mysqli_fetch_array($result)) { 
-                        echo "<div class='padding-5'>";
-                        echo "<div class='card-item'>";
-                        echo "<img class='image-item-recommendation' src=" .$item_data['gambar']. " alt='gambar item'>";
-                        echo "<div class='information'>";
-                        echo "<span class='text-bold'>" .$item_data['merk']. "</span><br/>";
-                        echo "<span>Harga : Rp. " .number_format($item_data['harga']). "</span>";
-                        echo "<button class='btn btn-primary button-detail item-detail-button'>Detail</button>";
-                        echo "</div></div></div>";
-                    }
-                ?>                       
-            </ul>
-        </div>
+        
+        <?php include("layouts/rekomendasi.php")?>
 
         <div class="col-sm-9">
             <div class="right-content">
                 <img class="promo-banner" src="" alt="Banner Promo">
                 
                 <div class="row items-group">
-                    <div class="col-sm-2 padding-5">
-                        <div class="card-item">
-                            <div class="label">
-                                <span class="label-text">BARU!</span>
-                            </div>
-                            <img class="image-item" src="images/Realme_3.jpg" alt="gambar item">
-                            <div class="information">
-                                <span class="text-bold">SAMSUNG J9 PRO 4/32</span><br/>
-                                <span>Harga : Rp 1.500.000</span>
-                                <button class='btn btn-primary button-detail item-detail-button'>Detail</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <?php
+                        while($item_list = mysqli_fetch_array($hasil)) { 
+                            echo "<div class='col-sm-2 padding-5'>";
+                            echo "<div class='card-item'>";
+                            if($item_list['label'] == "BARU"){
+                                echo "<div class='label' style='background-color: #df7d7d;'><span class='label-text'>".$item_list['label']."</span></div>";
+                            }else if($item_list['label'] == "PREORDER"){
+                                echo "<div class='label' style='background-color: #5acf60;'><span class='label-text'>".$item_list['label']."</span></div>";
+                            }
+                            echo "<img class='image-item' src='images/Realme_3.jpg' alt='gambar item'>";
+                            echo "<div class='information'>";
+                            echo "<span class='text-bold'>" .$item_list['merk']. "&nbsp;</span><span class='text-bold'>".$item_list['ram']."/</span><span class='text-bold'>".$item_list['internal']."</span><br/>";
+                            echo "<span>Harga : Rp. " .number_format($item_list['harga']). "</span>";
+                            echo "<button class='btn btn-primary button-detail item-detail-button'>Detail</button>";
+                            echo "</div></div></div>";
+                        }
+                    ?>
             </div>
         </div>
     </div>
 </body>
 
-</html>
+</html> 

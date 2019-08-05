@@ -43,10 +43,11 @@ $start = ($page - 1) * $per_hal;
 <table class="table table-hover">
 	<tr>
 		<th class="col-md-1">No</th>
-		<th class="col-md-3">Nama smartphone</th>
-		<th class="col-md-2">Harga Jual</th>
+		<th class="col-md-2">Nama smartphone</th>
+		<th class="col-md-1">RAM / ROM</th>		
 		<th class="col-md-3">Spesifikasi</th>
-		<!-- <th class="col-md-1">Sisa</th>		 -->
+		<th class="col-md-1">Harga Jual</th>
+		<th class="col-md-1">Label</th>		
 		<th class="col-md-3">Opsi</th>
 	</tr>
 	<?php 
@@ -62,7 +63,15 @@ $start = ($page - 1) * $per_hal;
 		<tr>
 			<td><?php echo $no++ ?></td>
 			<td><?php echo $b['merk'] ?></td>
-			<td>Rp.<?php echo number_format($b['harga']) ?>,-</td>
+			<td>
+				<span>
+					<?php echo $b['ram'];?>
+				</span>
+				<span>/</span>
+				<span>
+					<?php echo $b['internal'];?>
+				</span>
+			</td>
 			<td>
                 <?php 
                     $str = $b['spek'];
@@ -70,9 +79,11 @@ $start = ($page - 1) * $per_hal;
                     if(strlen($str) > 140) 
                         echo substr($str, 0, 138) . " ...";
                 ?></td>
+			<td>Rp.<?php echo number_format($b['harga']) ?>,-</td>						
+			<td><?php echo $b['label']?></td>			
 			<td>
 				<a href="det_smartphone.php?id=<?php echo $b['id']; ?>" class="btn btn-info">Detail</a>
-				<a href="edit.php?id=<?php echo $b['id']; ?>" class="btn btn-warning">Edit</a>
+				<a href="edit_smartphone.php?id=<?php echo $b['id']; ?>" class="btn btn-warning">Edit</a>
 				<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='delete.php?id=<?php echo $b['id']; ?>' }" class="btn btn-danger">Hapus</a>
 			</td>
 		</tr>		
@@ -81,14 +92,14 @@ $start = ($page - 1) * $per_hal;
 	?>
 </table>
 <ul class="pagination">			
-			<?php 
-			for($x=1;$x<=$halaman;$x++){
-				?>
-				<li><a href="?page=<?php echo $x ?>"><?php echo $x ?></a></li>
-				<?php
-			}
-			?>						
-		</ul>
+	<?php 
+	for($x=1;$x<=$halaman;$x++){
+		?>
+		<li><a href="?page=<?php echo $x ?>"><?php echo $x ?></a></li>
+		<?php
+	}
+	?>						
+</ul>
 <!-- modal input -->
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog">

@@ -1,73 +1,66 @@
-<?php
-// include database connection file
-include_once("scripts/config.php");
-
-// Check if form is submitted for user update, then redirect to homepage after update
-if(isset($_POST['update']))
-{   
-    $id = $_POST['id'];
-
-    $merek=$_POST['merek'];
-    $harga=$_POST['harga'];
-    $gambar=$_POST['gambar'];
-    $spek=$_POST['spek'];
-
-    // update user data
-    $result = mysqli_query($mysqli, "UPDATE smartphone SET merk='$merek',harga='$harga',gambar='$gambar', spek='$spek' WHERE id=$id");
-
-    // Redirect to homepage to display updated user in list
-    header("Location: list_smartphone.php");
-}
+<?php 
+$active = "dashboard";
+include 'layouts/header.php';
 ?>
+<h3><span class="glyphicon glyphicon-briefcase"></span>  Edit Barang</h3>
+<a class="btn" href="dashboard.php"><span class="glyphicon glyphicon-arrow-left"></span>  Kembali</a>
 <?php
-// Display selected user data based on id
-// Getting id from url
-$id = $_GET['id'];
-
-// Fetech user data based on id
-$result = mysqli_query($mysqli, "SELECT * FROM smartphone WHERE id=$id");
-
-while($item_data = mysqli_fetch_array($result))
-{
-    $merek = $item_data['merk'];
-    $harga = $item_data['harga'];
-    $gambar = $item_data['gambar'];
-    $spek = $item_data['spek'];
-
-}
-?>
-<html>
-<head>  
-    <title>Edit User Data</title>
-</head>
-
-<body>
-    <a href="index.php">Home</a>
-    <br/><br/>
-
-    <form name="update_item" method="post" action="edit_smartphone.php">
-        <table border="0">
-            <tr> 
-                <td>Nama Merek</td>
-                <td><input type="text" name="merek" value=<?php echo $merek;?>></td>
-            </tr>
-            <tr> 
-                <td>Harga</td>
-                <td><input type="text" name="harga" value=<?php echo $harga;?>></td>
-            </tr>
-            <tr> 
-                <td>Link Gambar</td>
-                <td><input type="text" name="gambar" value=<?php echo $gambar;?>></td>
-            </tr>
-            <tr> 
-                <td>Spesifikasi</td>
-                <td><input type="text" name="spek" value="<?php echo $spek;?>"></td>
-            </tr>
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+$det=mysqli_query($mysqli, "select * from smartphone where id='$id'")or die(mysqli_error());
+while($d=mysqli_fetch_array($det)){
+?>					
+	<form action="edit_act.php" method="post">
+		<table class="table" style="width: 50%;">
+			<tr>
+				<td></td>
+				<td><input type="hidden" name="id" value="<?php echo $d['id'] ?>"></td>
+			</tr>
+			<tr>
+				<td><label>Merek Smartphone</label></td>
+				<td colspan="3"><input type="text" class="form-control" name="merek" value="<?php echo $d['merk'] ?>"></td>
+			</tr>
+			<tr>
+				<td><label>Harga</label></td>
+				<td colspan="3"><input type="text" class="form-control" name="harga" value="<?php echo $d['harga'] ?>"></td>
+			</tr>
+			<tr>
+				
+			</tr>
+			<tr>
+                <td>
+                    <label>Label</label>
+				    <input type="text" class="form-control" name="label" value="<?php echo $d['label'] ?>">
+                </td>
+                <td>
+                    <label>RAM</label>
+					<input name="ram" type="number" class="form-control" value="<?php echo $d['ram']?>">
+                </td>
+                <td>
+                    <label>Internal</label>
+                    <input name="internal" type="number" class="form-control" value="<?php echo $d['internal']?>">
+                </td>
+			</tr>
+			<tr>
+				<td><label>Spesifikasi  lainnya</label></td>
+				<td colspan="3"><textarea name="spek" type="text" class="form-control" placeholder="Masukkan Spesifikasi" value="<?php echo $d['spek']?>"></textarea></td>
+			</tr>
+			<tr>
+				<td><label>Gambar</label></td>
+				<td colspan="3"><input type="text" class="form-control" name="gambar" value="<?php echo $d['gambar'] ?>"></td>
+			</tr>
             <tr>
-                <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="update" value="Update"></td>
+                <td colspan="3">
+                    <label>Link Tokopedia</label>
+                    <input name="link" type="text" class="form-control" value="<?php echo $d['link_tokped']?>">
+                </td>
             </tr>
-        </table>
-    </form>
-</body>
-</html>
+			<tr>
+				<td></td>
+				<td><input type="submit" class="btn btn-info" value="Simpan"></td>
+			</tr>
+		</table>
+	</form>
+	<?php 
+}
+?>
+<?php include 'footer.php'; ?>
