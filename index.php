@@ -41,8 +41,8 @@ $hasil = mysqli_query($mysqli, "select * from smartphone");
                                         class="sr-only">(current)</span></a>
                                 <a class="nav-item nav-link" href="#">Menu</a>
                                 <a class="nav-item nav-link" href="#">Menu</a>
-                                <a class="nav-item nav-link" href="#">Menu</a>
-                                <a class="nav-item nav-link" href="#">Menu</a>
+                                <a class="nav-item nav-link" href="#">About</a>
+                                <a class="nav-item nav-link" href="#">Contact us</a>
                             </div>
                         </div>
 
@@ -64,13 +64,21 @@ $hasil = mysqli_query($mysqli, "select * from smartphone");
                             echo "<div class='col-sm-2 padding-5'>";
                             echo "<div class='card-item'>";
                             if($item_list['label'] == "BARU"){
-                                echo "<div class='label' style='background-color: #df7d7d;'><span class='label-text'>".$item_list['label']."</span></div>";
+                                echo "<div class='label' style='background-color: #349cdd;'><span class='label-text'>".$item_list['label']."</span></div>";
                             }else if($item_list['label'] == "PREORDER"){
                                 echo "<div class='label' style='background-color: #5acf60;'><span class='label-text'>".$item_list['label']."</span></div>";
                             }
-                            echo "<img class='image-item' src='images/Realme_3.jpg' alt='gambar item'>";
+                            else if($item_list['label'] == "SOLD OUT"){
+                                echo "<div class='label' style='background-color: #e94545;'><span class='label-text'>".$item_list['label']."</span></div>";
+                            }
+                            else if($item_list['label'] == "BEKAS"){
+                                echo "<div class='label' style='background-color: #244b68;'><span class='label-text'>".$item_list['label']."</span></div>";
+                            }
+                            ?>
+                        <img class="image-item" src="<?php echo "images/".$item_list['gambar']; ?>">
+                        <?php
                             echo "<div class='information'>";
-                            echo "<span class='text-bold'>" .$item_list['merk']. "&nbsp;</span><span class='text-bold'>".$item_list['ram']."/</span><span class='text-bold'>".$item_list['internal']."</span><br/>";
+                            echo "<span class='text-bold'>" . strtoupper($item_list['brand']). "&nbsp;" . strtoupper($item_list['merk']) . "&nbsp;</span><span class='text-bold'>".$item_list['ram']."/</span><span class='text-bold'>".$item_list['internal']."</span><br/>";
                             echo "<span>Harga : Rp. " .number_format($item_list['harga']). "</span>";
                             echo "<button class='btn btn-primary button-detail item-detail-button'>Detail</button>";
                             echo "</div></div></div>";

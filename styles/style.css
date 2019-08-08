@@ -192,6 +192,15 @@ ul.list-group.kategori{
 .margin-top-50{
     margin-top: 50px;
 }
+.margin-right-5{
+    margin-top: 5px;
+}
+.margin-right-10{
+    margin-top: 10px;
+}
+.margin-right-50{
+    margin-top: 50px;
+}
 .text-underline{
     text-decoration-line: underline;
 }

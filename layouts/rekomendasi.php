@@ -13,17 +13,29 @@ $result = mysqli_query($mysqli, "select * from smartphone");
 
             <ul class="list-group content-left kategori">
                 <li class="list-group-item title-group">Rekomendasi</li>
+                <div class="row" style="display: flex;  margin-left: 10px; margin-top: 10px;">
                 <?php       
                     while($item_data = mysqli_fetch_array($result)) { 
-                        echo "<div class='padding-5'>";
+                        echo "<div class='col-md-6 padding-5'>";
                         echo "<div class='card-item'>";
-                        echo "<img class='image-item-recommendation' src=" .$item_data['gambar']. " alt='gambar item'>";
-                        echo "<div class='information'>";
-                        echo "<span class='text-bold'>" .$item_data['merk']. "</span><br/>";
-                        echo "<span>Harga : Rp. " .number_format($item_data['harga']). "</span>";
-                        echo "<button class='btn btn-primary button-detail item-detail-button'>Detail</button>";
-                        echo "</div></div></div>";
-                    }
-                ?>                       
+                            if($item_data['label'] == "BARU"){
+                                echo "<div class='label' style='background-color: #349cdd;'><span class='label-text'>".$item_data['label']."</span></div>";
+                            }else if($item_data['label'] == "PREORDER"){
+                                echo "<div class='label' style='background-color: #5acf60;'><span class='label-text'>".$item_data['label']."</span></div>";
+                            }
+                            else if($item_data['label'] == "SOLD OUT"){
+                                echo "<div class='label' style='background-color: #e94545;'><span class='label-text'>".$item_data['label']."</span></div>";
+                            }
+                            ?>
+                        <img class="image-item" src="<?php echo "images/".$item_data['gambar']; ?>">
+                        <?php
+                            echo "<div class='information'>";
+                            echo "<span class='text-bold'>" .$item_data['merk']. "&nbsp;</span><span class='text-bold'>".$item_data['ram']."/</span><span class='text-bold'>".$item_data['internal']."</span><br/>";
+                            echo "<span>Harga : Rp. " .number_format($item_data['harga']). "</span>";
+                            echo "<button class='btn btn-primary button-detail item-detail-button'>Detail</button>";
+                            echo "</div></div></div>";
+                        }
+                ?>                  
+                </div>     
             </ul>
         </div>

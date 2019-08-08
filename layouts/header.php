@@ -8,6 +8,7 @@
 	?>
 	<title>DASHBOARD</title>
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap-v3.css">
+	<link rel="stylesheet" type="text/css" href="styles/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="scripts/js/jquery-ui/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">    
 	<script type="text/javascript" src="scripts/js/jquery.js"></script>
@@ -29,7 +30,7 @@
 			</div>
 			<div class="collapse navbar-collapse">				
 				<ul class="nav navbar-nav navbar-right">
-					<li><a id="pesan_sedia" href="#" style="color: white;" data-toggle="modal" data-target="#modalpesan"><span class='fa fa-message'></span>  Pesan</a></li>
+					<li><a id="pesan_sedia" href="#" style="color: white;" data-toggle="modal" data-target="#modalpesan"><span class='fa fa-envelope'></span>  Pesan</a></li>
 					<li><a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#" style="color: white;">Hy , <?php echo $_SESSION['uname']  ?>&nbsp&nbsp<span class="fa fa-user"></span></a></li>
 				</ul>
 			</div>
@@ -89,7 +90,7 @@
 			<li><a href="barang_laku.php"><span class="fa fa-briefcase"></span>  Tambahkan Laptop</a></li>        												                   												
 			<li><a href="promo.php"><span class="fa fa-discount"></span> Promo</a></li>
 			<li><a href="ganti_foto.php"><span class="fa fa-picture"></span>  Ganti Foto</a></li>
-			<li><a href="tambah_admin.php"><span class="fa fa-user"></span>  Tambahkan Admin</a></li>
+			<li><a href="tambah_admin.php"><span class="fa fa-user-plus"></span>  Tambahkan Admin</a></li>
 			<li><a href="ganti_pass.php"><span class="fa fa-lock"></span> Ganti Password</a></li>		
 			<li><a href="logout.php"><span class="fa fa-log-out"></span>  Logout</a></li>			
         </ul>

@@ -12,12 +12,14 @@ while($d=mysqli_fetch_array($det)){
 	<form action="edit_act.php" method="post">
 		<table class="table" style="width: 50%;">
 			<tr>
-				<td></td>
+				<td>
+					<label>Merek Smartphone</label>
+					<input type="text" class="form-control" name="merek" value="<?php echo $d['merk'] ?>">
+				</td>
+				<td><label>Merek Smartphone</label>
+					<input type="text" class="form-control" name="merek" value="<?php echo $d['merk'] ?>">
+				</td>
 				<td><input type="hidden" name="id" value="<?php echo $d['id'] ?>"></td>
-			</tr>
-			<tr>
-				<td><label>Merek Smartphone</label></td>
-				<td colspan="3"><input type="text" class="form-control" name="merek" value="<?php echo $d['merk'] ?>"></td>
 			</tr>
 			<tr>
 				<td><label>Harga</label></td>
@@ -42,7 +44,7 @@ while($d=mysqli_fetch_array($det)){
 			</tr>
 			<tr>
 				<td><label>Spesifikasi  lainnya</label></td>
-				<td colspan="3"><textarea name="spek" type="text" class="form-control" placeholder="Masukkan Spesifikasi" value="<?php echo $d['spek']?>"></textarea></td>
+				<td colspan="3"><textarea name="spek" style="height: 150px;" type="text" class="form-control" placeholder="Masukkan Spesifikasi" value="<?php echo $d['spek']?>"></textarea></td>
 			</tr>
 			<tr>
 				<td><label>Gambar</label></td>
