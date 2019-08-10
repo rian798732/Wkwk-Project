@@ -44,6 +44,11 @@ ul.list-group.kategori{
     padding: 15px;
     font-size: 11pt;
 }
+li.list-group-item.title-group.active{
+    background-color: transparent;
+    text-align: left;
+    color: black;
+}
 .title-group{
     background-color: #5877df;
     color: white;
@@ -97,21 +102,26 @@ ul.list-group.kategori{
     position: relative;
     background-color: #ffffff;
     width: 100%;
+    height: 250px;
     border-radius: 8px;
 }
 .image-item{
-    display:block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    padding-top: 15%;
+    width: 80%;
+    padding: 22% 0 0 0;
+    height: 142px;
+    object-fit: contain;
 }
 .information{
     color: black;
+    bottom: 4px;
+    position: absolute;
     font-size: 10pt;
     text-align: center;
     padding: 4px;
-    height: 86px;
+    height: 100px;
     width: 100%;
 }
 .image-item-recommendation{

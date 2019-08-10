@@ -1,4 +1,5 @@
 <?php 
+$kategori = 'smartphone';
 // Create database connection using config file include_once("config.php"); 
 include_once("scripts/config.php"); 
 // hasil
@@ -21,7 +22,7 @@ $hasil = mysqli_query($mysqli, "select * from smartphone");
                 <div class="container">
                     <nav class="navbar navbar-expand-lg top-navbar">
                         <div class="navbar-brand">
-                            <img src="#" width="30" height="30" class="d-inline-block align-top" alt="">Tekno Shop
+                            <img src="images/logo.jpg" width="40" height="40" class="d-inline-block align-top" alt="">Tekno Shop
                         </div>
                         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -75,10 +76,16 @@ $hasil = mysqli_query($mysqli, "select * from smartphone");
                                 echo "<div class='label' style='background-color: #244b68;'><span class='label-text'>".$item_list['label']."</span></div>";
                             }
                             ?>
-                        <img class="image-item" src="<?php echo "images/".$item_list['gambar']; ?>">
+                        <img class="image-item" src="<?php echo "uploads/".$item_list['file_name']; ?>">
                         <?php
                             echo "<div class='information'>";
-                            echo "<span class='text-bold'>" . strtoupper($item_list['brand']). "&nbsp;" . strtoupper($item_list['merk']) . "&nbsp;</span><span class='text-bold'>".$item_list['ram']."/</span><span class='text-bold'>".$item_list['internal']."</span><br/>";
+                            $total_huruf = strlen($item_list['brand']) + strlen($item_list['merk']);
+
+                            if($total_huruf < 18){
+                                echo "<span class='text-bold'>" . strtoupper($item_list['brand']). "&nbsp;" . strtoupper($item_list['merk']) . "&nbsp;</span><br/><span class='text-bold'>".$item_list['ram']."/</span><span class='text-bold'>".$item_list['internal']."</span><br/>";
+                            }else{
+                                echo "<span class='text-bold'>" . strtoupper($item_list['brand']). "&nbsp;" . strtoupper($item_list['merk']) . "&nbsp;</span><span class='text-bold'>".$item_list['ram']."/</span><span class='text-bold'>".$item_list['internal']."</span><br/>";
+                            }
                             echo "<span>Harga : Rp. " .number_format($item_list['harga']). "</span>";
                             echo "<button class='btn btn-primary button-detail item-detail-button'>Detail</button>";
                             echo "</div></div></div>";

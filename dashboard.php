@@ -83,11 +83,11 @@ $start = ($page - 1) * $per_hal;
                 ?></td>
 			<td>Rp.<?php echo number_format($b['harga']) ?>,-</td>						
 			<td><?php echo $b['label']?></td>
-			<td><?php echo $b['gambar']?></td>			
+			<td><?php echo $b['file_name']?></td>			
 			<td>
-				<a href="det_smartphone.php?id=<?php echo $b['id']; ?>" data-toggle="modal" data-target="#modalDetail" class="btn btn-info">Detail</a>
-				<a href="edit_smartphone.php?id=<?php echo $b['id']; ?>" class="btn btn-warning">Edit</a>
-				<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='delete.php?id=<?php echo $b['id']; ?>' }" class="btn btn-danger">Hapus</a>
+				<a href="det_smartphone.php?id=<?php echo $b['id']; ?>" data-toggle="modal" data-target="#modalDetail" style="font-size: 24px; margin-right: 10px;"><i class="fa fa-book"></i></a>
+				<a href="edit_smartphone.php?id=<?php echo $b['id']; ?>" style="font-size: 24px; margin-right: 10px;"><i class="fa fa-edit"></i></a>
+				<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='delete.php?id=<?php echo $b['id']; ?>' }" style="font-size: 24px; margin-right: 10px;"><i class="fa fa-trash"></i></a>
 			</td>
 		</tr>		
 		<?php 
@@ -141,9 +141,9 @@ $start = ($page - 1) * $per_hal;
 						<label>Spesifikasi  lainnya</label>
                         <textarea name="spek" type="text" class="form-control" placeholder="Masukkan Spesifikasi"></textarea>
                     </div>
-                    <div class="col-md-12 form-group padding-0">
+					<div class="col-md-12 form-group padding-0">
 						<label>Gambar</label>
-						<input type="file" name="file">
+						<input type="file" name="myFile"> <span style="color: red;"><br/>* Pastikan gambar berukuran 224 x 224 atau ambil gambar yang ada di tokopedia</span>
                     </div>
                     <div class="col-md-12 form-group padding-0">
 						<label>Link Tokopedia</label>

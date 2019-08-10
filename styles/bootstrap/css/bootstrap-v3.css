@@ -910,7 +910,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #eb5656;
+  color: #347cad;
   text-decoration: none;
 }
 a:hover,
@@ -3700,7 +3700,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #eb5656;
+  background-color: #347cad;
 }
 .nav-stacked > li {
   float: none;

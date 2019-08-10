@@ -17,7 +17,7 @@
     <script type="text/javascript" src="scripts/js/jquery-ui/jquery-ui.js"></script>	
 </head>
 <body>
-	<div class="navbar navbar-default" style="background-color: #eb5656; border-radius: 0px;border: 0px;">
+	<div class="navbar navbar-default" style="background-color: #347cad; border-radius: 0px;border: 0px;">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a href="#" class="navbar-brand" style="color: white;">DASHBOARD</a>
@@ -84,15 +84,16 @@
 
 		<div class="row"></div>
 		<ul class="nav nav-pills nav-stacked">
-			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a href="dashboard.php"><span class="fa fa-home"></span>  Dashboard</a></li>			
-			<li class=<?php if($active=='tambah_laptop'){echo 'active';}else{echo'noactive';}?>><a href="tambah_laptop.php"><span class="fa fa-briefcase"></span>  Data Barang</a></li>
-            <li><a href="barang_laku.php"><span class="fa fa-briefcase"></span>  Tambahkan Smartphone</a></li> 
-			<li><a href="barang_laku.php"><span class="fa fa-briefcase"></span>  Tambahkan Laptop</a></li>        												                   												
-			<li><a href="promo.php"><span class="fa fa-discount"></span> Promo</a></li>
-			<li><a href="ganti_foto.php"><span class="fa fa-picture"></span>  Ganti Foto</a></li>
-			<li><a href="tambah_admin.php"><span class="fa fa-user-plus"></span>  Tambahkan Admin</a></li>
-			<li><a href="ganti_pass.php"><span class="fa fa-lock"></span> Ganti Password</a></li>		
-			<li><a href="logout.php"><span class="fa fa-log-out"></span>  Logout</a></li>			
+			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a href="dashboard.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Dashboard</a></li>			
+			<li class=<?php if($active=='tambah_laptop'){echo 'active';}else{echo'noactive';}?>><a href="tambah_laptop.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Smartphone</a></li>
+            <li><a href="barang_laku.php"><span class="fa fa-laptop"></span>&nbsp;&nbsp;Data Laptop</a></li> 
+			<li><a href="barang_laku.php"><span class="fa fa-battery-full"></span>&nbsp;&nbsp;Data Accsesoris</a></li>        												                   												
+			<li><a href="promo.php"><span class="fa fa-percent"></span>&nbsp;&nbsp;Promo</a></li>
+			<li><a href="index.php"><span class="fa fa-tv"></span>&nbsp;&nbsp;Lihat Website</a></li>
+			<li><a href="ganti_foto.php"><span class="fa fa-camera"></span>&nbsp;&nbsp;Ganti Foto</a></li>
+			<li><a href="tambah_admin.php"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Tambahkan Admin</a></li>
+			<li><a href="ganti_pass.php"><span class="fa fa-lock"></span>&nbsp;&nbsp;Ganti Password</a></li>		
+			<li><a href="logout.php"><span class="fa fa-reply"></span>&nbsp;&nbsp;Logout</a></li>			
         </ul>
         
 	</div>
