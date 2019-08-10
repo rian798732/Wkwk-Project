@@ -16,7 +16,7 @@ $hasil = mysqli_query($mysqli, "select * from smartphone");
 </head>
 
 <body>
-    <div class="row" style="margin-right: 0px">
+    <div class="row" style="width: 100%; margin: 0;">
         <div class="col-lg-12" style="padding: 0;">
             <div class="top">
                 <div class="container">
@@ -52,6 +52,7 @@ $hasil = mysqli_query($mysqli, "select * from smartphone");
                 </div>
             </div>
         </div>
+    </div>    
         
         <?php include("layouts/rekomendasi.php")?>
 

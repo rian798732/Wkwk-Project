@@ -2,6 +2,7 @@
 $result = mysqli_query($mysqli, "select * from smartphone");
 ?>
 
+<div class="row" style="width: 100%; margin: 0;">
 <div class="col-sm-3">
             <ul class="list-group content-left kategori">
                 <li class="list-group-item title-group">Kategori</li>

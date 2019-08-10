@@ -6,10 +6,6 @@ $ext = pathinfo($_FILES["myFile"]["name"], PATHINFO_EXTENSION);
 $size = $_FILES["foto"]["size"];
 $tgl  = date("Y-m-d");
 
-// move_uploaded_file($_FILES['foto']['tmp_name'], "foto/".$_FILES['foto']['name'])or die();
-// 	mysqli_query($koneksi, "update admin set foto='$foto' where uname='$user'");
-
-
 $u=mysqli_query($mysqli, "select * from admin where id='$id'");
 $us=mysqli_fetch_array($u);
 if(file_exists("uploads/".$us['foto'])){
