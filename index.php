@@ -13,44 +13,50 @@ $hasil = mysqli_query($mysqli, "select * from smartphone");
     <link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script type="text/javascript" src="scripts/js/jquery.js"></script>
+	<script type="text/javascript" src="scripts/js/jquery.js"></script>
+	<script type="text/javascript" src="scripts/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="scripts/js/jquery-ui/jquery-ui.js"></script>
 </head>
 
 <body>
     <div class="row" style="width: 100%; margin: 0;">
         <div class="col-lg-12" style="padding: 0;">
-            <div class="top">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg top-navbar">
-                        <div class="navbar-brand">
-                            <img src="images/logo.jpg" width="40" height="40" class="d-inline-block align-top" alt="">Tekno Shop
-                        </div>
-                        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button> -->
-                        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                            <div class="form">
-                                <form class="form-inline" style="margin-bottom: 0px;">
-                                    <input class="form-control" type="search" placeholder="Cari Barang"
-                                        aria-label="Search">
-                                    <button class="btn button-search" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="navbar-nav">
-                                <a class="nav-item nav-link active" href="#">Home <span
-                                        class="sr-only">(current)</span></a>
-                                <a class="nav-item nav-link" href="#">Menu</a>
-                                <a class="nav-item nav-link" href="#">Menu</a>
-                                <a class="nav-item nav-link" href="#">About</a>
-                                <a class="nav-item nav-link" href="#">Contact us</a>
-                            </div>
-                        </div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #5877df!important">
+                <a class="navbar-brand color-white" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                        <a href="login_page.php"><i class="fa fa-user user-account justify-content-end"></i></a>
-                    </nav>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link color-white" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-white" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle color-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-white" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline" style="margin-bottom: 0;">
+                        <input class="form-control" style="width: 72%;" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary" style="color: #fff;border-radius: 0px 8px 8px 0px;background-color: #96aaec;border-color: #8a9fe8;" type="submit">Search</button>
+                    </form>
                 </div>
-            </div>
+            </nav>
         </div>
     </div>    
         
