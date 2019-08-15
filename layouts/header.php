@@ -84,7 +84,8 @@
 
 		<div class="row"></div>
 		<ul class="nav nav-pills nav-stacked">
-			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a href="dashboard.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Dashboard</a></li>			
+			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a href="dashboard.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Dashboard</a></li>
+			<li class=<?php if($active=='acc_hp'){echo 'active';}else{echo'noactive';}?>><a href="accesoris_hp.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Accesoris Hp</a></li>			
 			<li class=<?php if($active=='tambah_laptop'){echo 'active';}else{echo'noactive';}?>><a href="tambah_laptop.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Smartphone</a></li>
             <li><a href="barang_laku.php"><span class="fa fa-laptop"></span>&nbsp;&nbsp;Data Laptop</a></li> 
 			<li><a href="barang_laku.php"><span class="fa fa-battery-full"></span>&nbsp;&nbsp;Data Accsesoris</a></li>        												                   												

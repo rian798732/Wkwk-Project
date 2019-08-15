@@ -109,7 +109,7 @@ $start = ($page - 1) * $per_hal;
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Tambah smartphone Baru</h4>
+				<h4 class="modal-title">Tambah Smartphone Baru</h4>
 			</div>
 			<div class="modal-body">
 				<form action="dashboard_act.php" method="post" enctype="multipart/form-data">

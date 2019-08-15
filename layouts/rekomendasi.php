@@ -4,13 +4,13 @@ $result = mysqli_query($mysqli, "select * from smartphone");
 
 <div class="row" style="width: 100%; margin: 0;">
 <div class="col-sm-3">
-            <ul class="list-group content-left kategori">
+            <!-- <ul class="list-group content-left kategori">
                 <li class="list-group-item title-group">Kategori</li>
                 <li class=<?php if($kategori=='smartphone'){echo "'list-group-item title-group active'";}else{echo'list-group-item title-group noactive';}?>>Smartphone</li>
                 <li class="list-group-item">Laptop</li>
                 <li class="list-group-item">Aksesoris</li>
                 <li class="list-group-item">Lainnya</li>
-            </ul>
+            </ul> -->
 
             <ul class="list-group content-left kategori">
                 <li class="list-group-item title-group">Rekomendasi</li>
