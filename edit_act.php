@@ -1,16 +1,16 @@
 <?php 
 include 'scripts/config.php';
 $id = $_POST['id'];
+$nama = $_POST['nama'];
 $merek=$_POST['merek'];
+$warna =  $_POST['warna'];
+$kategori = $_POST['kategori'];
 $harga=$_POST['harga'];
-$var_label=$_POST['label'];
-$ram=$_POST['ram'];
-$internal=$_POST['internal'];
-$spek=$_POST['spek'];
+$label=$_POST['label'];
+$desk=$_POST['desk'];
 $link=$_POST['link'];
-$label = strtoupper($var_label);
 
-mysqli_query($mysqli, "UPDATE smartphone set merk='$merek', harga='$harga', spek='$spek',label='$label', link='$link', ram='$ram', internal='$internal' where id='$id'");
-header("location:dashboard.php");
+mysqli_query($mysqli, "UPDATE acc_hp set name='$nama',kategori='$kategori', merek='$merek', warna='$warna', harga='$harga', deskripsi='$desk', label='$label', link_tokped='$link' where id='$id'");
+header("location:accesoris_hp.php");
 
 ?>

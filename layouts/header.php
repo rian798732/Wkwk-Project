@@ -87,8 +87,8 @@
 			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a href="dashboard.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Dashboard</a></li>
 			<li class=<?php if($active=='acc_hp'){echo 'active';}else{echo'noactive';}?>><a href="accesoris_hp.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Accesoris Hp</a></li>			
 			<li class=<?php if($active=='tambah_laptop'){echo 'active';}else{echo'noactive';}?>><a href="tambah_laptop.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Smartphone</a></li>
-            <li><a href="barang_laku.php"><span class="fa fa-laptop"></span>&nbsp;&nbsp;Data Laptop</a></li> 
-			<li><a href="barang_laku.php"><span class="fa fa-battery-full"></span>&nbsp;&nbsp;Data Accsesoris</a></li>        												                   												
+            <li><a href="barang_laku.php"><span class="fa fa-laptop"></span>&nbsp;&nbsp;Tambah Merek & Kategori</a></li> 
+			<li><a href="barang_laku.php"><span class="fa fa-battery-full"></span>&nbsp;&nbsp;Tambah Label & Warna</a></li>        												                   												
 			<li><a href="promo.php"><span class="fa fa-percent"></span>&nbsp;&nbsp;Promo</a></li>
 			<li><a href="index.php"><span class="fa fa-tv"></span>&nbsp;&nbsp;Lihat Website</a></li>
 			<li><a href="ganti_foto.php"><span class="fa fa-camera"></span>&nbsp;&nbsp;Ganti Foto</a></li>

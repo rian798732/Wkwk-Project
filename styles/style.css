@@ -117,6 +117,19 @@ li.list-group-item.title-group.active{
     height: 142px;
     object-fit: contain;
 }
+.image-item-dashboard{
+    display: block;
+    width: 25%;
+    margin-top: 30px;
+    margin-left: 35px;
+    padding: 0 0 0 0;
+}
+.tabel-detail{
+    width: 60%;
+    position: absolute;
+    top: 15px;
+    right: 60px;
+}
 .information{
     color: black;
     bottom: 4px;

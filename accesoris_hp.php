@@ -5,6 +5,7 @@ include 'scripts/config.php';?>
 
 <h3><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Aksesoris Smartphone</h3>
 <button style="margin-bottom:20px" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Tambah Data Barang</button>
+
 <br/>
 <br/>
 
@@ -23,10 +24,10 @@ if($jum == 0){
 }
 ?>
 
-<form action="cari_act.php" method="get">
+<form action="cari_acc_hp_act.php" method="get">
 	<div class="input-group col-md-5 col-md-offset-7">
 		<span class="input-group-addon" id="basic-addon1"><span class="fa fa-search"></span></span>
-		<input type="text" class="form-control" placeholder="Cari smartphone di sini .." aria-describedby="basic-addon1" name="cari">	
+		<input type="text" class="form-control" placeholder="Cari barang di sini .." aria-describedby="basic-addon1" name="cari">	
 	</div>
 </form>
 <br/>
@@ -35,10 +36,10 @@ if($jum == 0){
 		<th class="col-md-1">No</th>
 		<th class="col-md-2">Nama Barang</th>
 		<th class="col-md-1">Warna</th>	
-        <th class="col-md-1">Deskripsi</th>		
-		<th class="col-md-2">Harga</th>
+        <th class="col-md-2">Deskripsi</th>		
+		<th class="col-md-1">Harga</th>
 		<th class="col-md-1">Label</th>		
-		<th class="col-md-2">Link Gambar</th>
+		<th class="col-md-2">Kategori</th>
 		<th class="col-md-2">Opsi</th>
 	</tr>
 	<?php 
@@ -53,14 +54,17 @@ if($jum == 0){
 		?>
 		<tr>
 			<td><?php echo $no++ ?></td>
-			<?php echo "<td>". $b['kategori']. "&nbsp" . $b['merek']; ?></td>
+			<?php echo "<td>". $b['name'];?></td>
             <td><?php echo $b['warna']?></td>
 			<td>
 				<span>
                     <?php 
                         $str = $b['deskripsi'];
-                        if(strlen($str) > 140) 
-                        echo substr($str, 0, 138) . " ...";
+                        if(strlen($str) > 20){
+							echo substr($str, 0, 19) . " ...";
+						}else{
+							echo $str;
+						}
                     ?>
 				</span>
             </td>
@@ -73,10 +77,10 @@ if($jum == 0){
                 <?php 
                     echo $b['label']; 
                 ?></td>
-			<td><?php echo $b['file_name']?></td>			
+			<td><?php echo $b['kategori']?></td>			
 			<td>
-				<a href="det_smartphone.php?id=<?php echo $b['id']; ?>" data-toggle="modal" data-target="#modalDetail" style="font-size: 24px; margin-right: 10px;"><i class="fa fa-book"></i></a>
-				<a href="edit_smartphone.php?id=<?php echo $b['id']; ?>" style="font-size: 24px; margin-right: 10px;"><i class="fa fa-edit"></i></a>
+				<a href="detail_acc_hp.php?id=<?php echo $b['id']; ?>" style="font-size: 24px; margin-right: 10px;"><i class="fa fa-book"></i></a>
+				<a href="edit.php?id=<?php echo $b['id']; ?>" style="font-size: 24px; margin-right: 10px;"><i class="fa fa-edit"></i></a>
 				<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='delete_acc_hp.php?id=<?php echo $b['id']; ?>' }" style="font-size: 24px; margin-right: 10px;"><i class="fa fa-trash"></i></a>
 			</td>
 		</tr>		
@@ -105,11 +109,31 @@ if($jum == 0){
 				<form action="acc_hp_act.php" method="post" enctype="multipart/form-data">
 					<div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
 						<label>Kategori</label>
-						<input name="kategori" type="text" class="form-control" placeholder="Contoh: Headseat, Memory, dll">
+						<select class="form-control" id="kategori" name="kategori">
+							<option>Belum Dipilih</option>
+							<?php
+								$kategori = mysqli_query($mysqli, "select * from kategori");
+								while($data = mysqli_fetch_array($kategori)){
+							?>
+							<option><?php echo $data['nama_kategori']; ?></option>
+							<?php
+								}
+							?>
+						</select>
 					</div>
 					<div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
 						<label>Merek</label>
-						<input name="merek" type="text" class="form-control" placeholder="Contoh : SAMSUNG">
+						<select class="form-control" id="kategori" name="merek">
+							<option>Belum Dipilih</option>
+							<?php
+								$merek = mysqli_query($mysqli, "select * from merek");
+								while($data = mysqli_fetch_array($merek)){
+							?>
+							<option><?php echo $data['nama_merek']; ?></option>
+							<?php
+								}
+							?>
+						</select>
 					</div>
 					<div class="col-md-3 padding-0 form-group">
 						<label>Warna</label>
@@ -119,21 +143,31 @@ if($jum == 0){
 						<label>Harga</label>
 						<input name="harga" type="text" class="form-control" placeholder="Harga">
 					</div>
-                    <div class="col-md-5 padding-0 form-group" style="margin-right: 10px;">
+                    <div class="col-md-6 padding-0 form-group" style="margin-right: 10px;">
 						<label>Label</label>
-						<input name="label" type="text" class="form-control" placeholder="Label (Baru, Preorder, Bekas) ..">
+						<select class="form-control" id="kategori" name="label">
+							<option>Belum Dipilih</option>
+							<?php
+								$label = mysqli_query($mysqli, "select * from label");
+								while($data = mysqli_fetch_array($label)){
+							?>
+							<option><?php echo $data['nama_label']; ?></option>
+							<?php
+								}
+							?>
+						</select>
 					</div>
-                    <div class="col-md-6 form-group padding-0" style="min-height: 50px;">
-						<label>Deskripsi</label>
-                        <textarea name="desk" type="text" class="form-control" placeholder="Masukkan Spesifikasi"></textarea>
+					<div class="col-md-5 form-group padding-0">
+						<label>Link Tokopedia</label>
+                        <input name="link" type="text" class="form-control" placeholder="Masukkan Link">
                     </div>
 					<div class="col-md-12 form-group padding-0">
 						<label>Gambar</label>
 						<input type="file" name="myFile"> <span style="color: red;"><br/>* Pastikan gambar berukuran 224 x 224 atau ambil gambar yang ada di tokopedia</span>
                     </div>
-                    <div class="col-md-12 form-group padding-0">
-						<label>Link Tokopedia</label>
-                        <input name="link" type="text" class="form-control" placeholder="Masukkan Link">
+					<div class="col-md-12 form-group padding-0" style="min-height: 50px;">
+						<label>Deskripsi</label>
+                        <textarea name="desk" type="text" class="form-control" placeholder="Masukkan Spesifikasi"></textarea>
                     </div>
 				</div>
 				<div class="modal-footer">
@@ -141,19 +175,6 @@ if($jum == 0){
 					<input type="submit" class="btn btn-primary" name="upload" value="Simpan">
 				</div>
 			</form>
-		</div>
-	</div>
-</div>
-
-<div id="modalDetail" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Detail</h4>
-		</div>
-		<div class="modal-body">
-			
 		</div>
 	</div>
 </div>

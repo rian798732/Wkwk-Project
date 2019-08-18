@@ -3,7 +3,7 @@ $kategori = 'smartphone';
 // Create database connection using config file include_once("config.php"); 
 include_once("scripts/config.php"); 
 // hasil
-$hasil = mysqli_query($mysqli, "select * from smartphone");
+$hasil = mysqli_query($mysqli, "select * from acc_hp");
 ?>
 
 <html lang="en">
@@ -74,27 +74,27 @@ $hasil = mysqli_query($mysqli, "select * from smartphone");
                         while($item_list = mysqli_fetch_array($hasil)) { 
                             echo "<div class='col-sm-2 padding-5'>";
                             echo "<div class='card-item'>";
-                            if($item_list['label'] == "BARU"){
-                                echo "<div class='label' style='background-color: #349cdd;'><span class='label-text'>".$item_list['label']."</span></div>";
-                            }else if($item_list['label'] == "PREORDER"){
-                                echo "<div class='label' style='background-color: #5acf60;'><span class='label-text'>".$item_list['label']."</span></div>";
+                            if($item_list['label'] == "Baru"){
+                                echo "<div class='label' style='background-color: #349cdd;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
+                            }else if($item_list['label'] == "Preorder"){
+                                echo "<div class='label' style='background-color: #5acf60;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
                             }
-                            else if($item_list['label'] == "SOLD OUT"){
-                                echo "<div class='label' style='background-color: #e94545;'><span class='label-text'>".$item_list['label']."</span></div>";
+                            else if($item_list['label'] == "Habis"){
+                                echo "<div class='label' style='background-color: #e94545;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
                             }
-                            else if($item_list['label'] == "BEKAS"){
-                                echo "<div class='label' style='background-color: #244b68;'><span class='label-text'>".$item_list['label']."</span></div>";
+                            else if($item_list['label'] == "Bekas"){
+                                echo "<div class='label' style='background-color: #244b68;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
                             }
                             ?>
                         <img class="image-item" src="<?php echo "uploads/".$item_list['file_name']; ?>">
                         <?php
                             echo "<div class='information'>";
-                            $total_huruf = strlen($item_list['brand']) + strlen($item_list['merk']);
+                            $total_huruf = strlen($item_list['kategori']) + strlen($item_list['merek']);
 
                             if($total_huruf < 18){
-                                echo "<span class='text-bold'>" . strtoupper($item_list['brand']). "&nbsp;" . strtoupper($item_list['merk']) . "&nbsp;</span><br/><span class='text-bold'>".$item_list['ram']."/</span><span class='text-bold'>".$item_list['internal']."</span><br/>";
+                                echo "<span class='text-bold'>" . strtoupper($item_list['kategori']). "&nbsp;" . strtoupper($item_list['merek']) . "<br/>";
                             }else{
-                                echo "<span class='text-bold'>" . strtoupper($item_list['brand']). "&nbsp;" . strtoupper($item_list['merk']) . "&nbsp;</span><span class='text-bold'>".$item_list['ram']."/</span><span class='text-bold'>".$item_list['internal']."</span><br/>";
+                                echo "<span class='text-bold'>" . strtoupper($item_list['kategori']). "&nbsp;" . strtoupper($item_list['merek']) . "<br/>";
                             }
                             echo "<span>Harga : Rp. " .number_format($item_list['harga']). "</span>";
                             echo "<button class='btn btn-primary button-detail item-detail-button'>Detail</button>";

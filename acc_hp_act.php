@@ -4,10 +4,10 @@
     $merek=$_POST['merek'];
     $warna=$_POST['warna'];
     $harga=$_POST['harga'];
-    $var_label=$_POST['label'];
+    $label=$_POST['label'];
     $deskripsi=$_POST['desk'];
     $link=$_POST['link'];
-    $label = strtoupper($var_label);
+    $name_brg = $kategori . " " . $merek;
 
     // <?php
         // definisi folder upload
@@ -43,7 +43,7 @@
             exit;
           }else{
 
-            $insert = $mysqli->query("INSERT INTO acc_hp(kategori, merek, warna, harga, deskripsi, label, file_name, file_size, file_type) VALUES('$kategori','$merek','$warna','$harga','$deskripsi','$label', '$name', '$size', '$ext')");
+            $insert = $mysqli->query("INSERT INTO acc_hp(name, kategori, merek, warna, harga, deskripsi, label, file_name, file_size, file_type) VALUES('$name_brg','$kategori','$merek','$warna','$harga','$deskripsi','$label', '$name', '$size', '$ext')");
             if($insert){
                 header("location:accesoris_hp.php");
                 echo '<div class="alert alert-success">File berhasil di upload.</div>';
