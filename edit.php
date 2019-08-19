@@ -153,13 +153,17 @@ while($data=mysqli_fetch_array($detail)){
 				$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
 				while($data=mysqli_fetch_array($detail)){
 			?>
-			<img style="width: 70%" src="uploads/<?php echo $data['file_name']; }?>">
+			<img style="width: 70%" src="uploads/<?php echo $data['file_name'];?>">
 			<form action="edit_image_item.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">	
-					<input type="file" name="foto" class="form-control"><span style="color: red;"><br/>* Pastikan gambar berukuran 224 x 224 atau ambil gambar yang ada di tokopedia</span>					
+					<input type="file" name="foto" class="form-control">				
+					<input style="matgin-top: 15px;" type="checkbox" name="ubah_foto" value="true"> Ceklis Jika Ingin Mengubah Foto<br>					
+					<span style="color: red;"><br/>* Pastikan ukuran gambar tidak terlalu besar atau ambil gambar yang ada di tokopedia</span><br/>
+					<span style="color: red;">* Jika tidak ingin mengubah gambar biarkan saja gunakan tombol "SIMPAN"</span>
 				</div>
 				<div class="form-group">
 				<?php
+					}
 					$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
 					while($data=mysqli_fetch_array($detail)){
 				?>

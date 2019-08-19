@@ -1,5 +1,5 @@
 <?php
-$result = mysqli_query($mysqli, "select * from smartphone");
+$result = mysqli_query($mysqli, "select * from acc_hp");
 ?>
 
 <div class="row" style="width: 100%; margin: 0;">
@@ -28,10 +28,10 @@ $result = mysqli_query($mysqli, "select * from smartphone");
                                 echo "<div class='label' style='background-color: #e94545;'><span class='label-text'>".$item_data['label']."</span></div>";
                             }
                             ?>
-                        <img class="image-item" src="<?php echo "images/".$item_data['gambar']; ?>">
+                        <img class="image-item" src="<?php echo "uploads/".$item_data['file_name']; ?>">
                         <?php
                             echo "<div class='information'>";
-                            echo "<span class='text-bold'>" .$item_data['merk']. "&nbsp;</span><span class='text-bold'>".$item_data['ram']."/</span><span class='text-bold'>".$item_data['internal']."</span><br/>";
+                            echo "<span class='text-bold'>" .$item_data['kategori']. "&nbsp;</span><span class='text-bold'>".$item_data['merek']."</span><br/>";
                             echo "<span>Harga : Rp. " .number_format($item_data['harga']). "</span>";
                             echo "<button class='btn btn-primary button-detail item-detail-button'>Detail</button>";
                             echo "</div></div></div>";

@@ -163,7 +163,7 @@ if($jum == 0){
                     </div>
 					<div class="col-md-12 form-group padding-0">
 						<label>Gambar</label>
-						<input type="file" name="myFile"> <span style="color: red;"><br/>* Pastikan gambar berukuran 224 x 224 atau ambil gambar yang ada di tokopedia</span>
+						<input type="file" name="foto"> <span style="color: red;"><br/>* Pastikan gambar berukuran 224 x 224 atau ambil gambar yang ada di tokopedia</span>
                     </div>
 					<div class="col-md-12 form-group padding-0" style="min-height: 50px;">
 						<label>Deskripsi</label>

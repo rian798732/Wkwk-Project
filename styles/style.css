@@ -112,8 +112,8 @@ li.list-group-item.title-group.active{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
-    padding: 22% 0 0 0;
+    width: 100%;
+    padding: 10% 0 0 0;
     height: 142px;
     object-fit: contain;
 }
