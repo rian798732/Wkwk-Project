@@ -85,15 +85,12 @@
 		<div class="row"></div>
 		<ul class="nav nav-pills nav-stacked">
 			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a href="dashboard.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Dashboard</a></li>
-			<li class=<?php if($active=='acc_hp'){echo 'active';}else{echo'noactive';}?>><a href="accesoris_hp.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Accesoris Hp</a></li>			
-			<li class=<?php if($active=='tambah_laptop'){echo 'active';}else{echo'noactive';}?>><a href="tambah_laptop.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Smartphone</a></li>
-            <li><a href="barang_laku.php"><span class="fa fa-laptop"></span>&nbsp;&nbsp;Tambah Merek & Kategori</a></li> 
-			<li><a href="barang_laku.php"><span class="fa fa-battery-full"></span>&nbsp;&nbsp;Tambah Label & Warna</a></li>        												                   												
+			<li class=<?php if($active=='acc_hp'){echo 'active';}else{echo'noactive';}?>><a href="accesoris_hp.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Barang</a></li>			
+			<li class=<?php if($active=='kartu_perdana'){echo 'active';}else{echo'noactive';}?>><a href="kartu_perdana.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Kartu Perdana</a></li>      												                   												
 			<li><a href="promo.php"><span class="fa fa-percent"></span>&nbsp;&nbsp;Promo</a></li>
 			<li><a href="index.php"><span class="fa fa-tv"></span>&nbsp;&nbsp;Lihat Website</a></li>
-			<li><a href="ganti_foto.php"><span class="fa fa-camera"></span>&nbsp;&nbsp;Ganti Foto</a></li>
-			<li><a href="tambah_admin.php"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Tambahkan Admin</a></li>
-			<li><a href="ganti_pass.php"><span class="fa fa-lock"></span>&nbsp;&nbsp;Ganti Password</a></li>		
+			<li class=<?php if($active=='tambah_admin'){echo 'active';}else{echo'noactive';}?>><a href="tambah_admin.php"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Tambahkan Admin</a></li>
+			<li class=<?php if($active=='ganti_pass'){echo 'active';}else{echo'noactive';}?>><a href="ganti_pass.php"><span class="fa fa-lock"></span>&nbsp;&nbsp;Ganti Password</a></li>		
 			<li><a href="logout.php"><span class="fa fa-reply"></span>&nbsp;&nbsp;Logout</a></li>			
         </ul>
         

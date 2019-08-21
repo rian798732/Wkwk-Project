@@ -123,7 +123,7 @@ while($data=mysqli_fetch_array($detail)){
 						$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
 						while($data=mysqli_fetch_array($detail)){
 					?>
-					<td colspan="2"><textarea name="desk" style="height: 150px;" type="text" class="form-control" placeholder="Masukkan Deskripsi"><?php echo $data['deskripsi']?></textarea></td>
+					<td colspan="2"><textarea name="desk" style="height: 150px; white-space: pre-line;" type="text" class="form-control" placeholder="Masukkan Deskripsi"><?php echo $data['deskripsi']?></textarea></td>
 					<?php
 						}
 					?>

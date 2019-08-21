@@ -1,5 +1,6 @@
 <?php 
     include 'scripts/config.php';
+    $nama_barang = $_POST['nama_barang'];
     $kategori=$_POST['kategori'];
     $merek=$_POST['merek'];
     $warna=$_POST['warna'];
@@ -7,7 +8,6 @@
     $label=$_POST['label'];
     $deskripsi=$_POST['desk'];
     $link=$_POST['link'];
-    $name_brg = $kategori . " " . $merek;
     $foto = $_FILES['foto']['name'];
     $tmp = $_FILES['foto']['tmp_name'];
     $size = $_FILES['foto']['size'];
@@ -19,7 +19,7 @@
     // Proses upload
     if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
       // Proses simpan ke Database
-      $query = "INSERT INTO acc_hp(name, kategori, merek, warna, harga, deskripsi, label, file_name, file_size, file_type) VALUES('$name_brg','$kategori','$merek','$warna','$harga','$deskripsi','$label', '$fotobaru', '$size', '$ext')";
+      $query = "INSERT INTO acc_hp(name, kategori, merek, warna, harga, deskripsi, label, file_name, file_size, file_type) VALUES('$name_barang','$kategori','$merek','$warna','$harga','$deskripsi','$label', '$fotobaru', '$size', '$ext')";
       // $query = "INSERT INTO siswa VALUES('".$nis."', '".$nama."', '".$jenis_kelamin."', '".$telp."', '".$alamat."', '".$fotobaru."')";
       $sql = mysqli_query($mysqli, $query); // Eksekusi/ Jalankan query dari variabel $query
       if($sql){ // Cek jika proses simpan ke database sukses atau tidak

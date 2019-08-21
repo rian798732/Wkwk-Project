@@ -46,7 +46,7 @@
             </tr>
             <tr style="width: 260px;"> 
                 <td>Deskripsi</td>
-                <td>Ini adalah sebuah deskripsi yang sangat panjang Ini adalah sebuah deskripsi yang sangat panjang Ini adalah sebuah deskripsi yang sangat panjang Ini adalah sebuah deskripsi yang sangat panjang</td>
+                <td><p style="white-space: pre-line;"><?php echo $b['deskripsi']; ?></p></td>
             </tr>
             <?php
                 }
