@@ -24,15 +24,15 @@ include_once("scripts/config.php");
         <div class="col-lg-12" style="padding: 0; position: fixed; z-index: 3;">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #5877df!important">
                 <img class="navbar-image" src="images/logo.png" width="60px">
-                <a class="navbar-brand color-white" style="margin-right: 20%;" href="index.php">WKACC Website</a>
+                <a class="navbar-brand color-white" style="" href="index.php">WKACC Website</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav" style="margin-left: auto; margin-right: auto;">
                         <li class="nav-item active">
-                            <a class="nav-link color-white" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link color-white" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link color-white" href="#">Promo</a>
@@ -97,6 +97,7 @@ include_once("scripts/config.php");
                         if(isset($_GET['kategori'])){
                             $kategori=mysqli_real_escape_string($mysqli, $_GET['kategori']);
                             $brg=mysqli_query($mysqli, "select * from acc_hp where kategori like '$kategori'");
+                            echo "<div class='col-md-12 padding-0' style='text-align: center; margin-bottom: 10px;'>". $_GET['kategori'] ."</h5></div>";
                         }else{
                             $brg=mysqli_query($mysqli, "select * from acc_hp limit $start, $per_hal");
                         }
@@ -131,7 +132,7 @@ include_once("scripts/config.php");
                             }else{
                                 echo "<span class='text-bold'>" . $str . "<br/>";
                             }
-                            echo "<span>Harga : Rp. " .number_format($item_list['harga']). "</span>";
+                            echo "<span>Harga : Rp. " .number_format($item_list['harga'],0,',','.'). "</span>";
                             echo "<a href='#' class='btn btn-primary button-detail item-detail-button'>Detail</a>";
                             echo "</div></div></div>";
                         }

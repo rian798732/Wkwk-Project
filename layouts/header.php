@@ -14,10 +14,68 @@
 	<script type="text/javascript" src="scripts/js/jquery.js"></script>
 	<script type="text/javascript" src="scripts/js/jquery.js"></script>
 	<script type="text/javascript" src="scripts/js/bootstrap.js"></script>
-    <script type="text/javascript" src="scripts/js/jquery-ui/jquery-ui.js"></script>	
+	<script type="text/javascript" src="scripts/js/jquery-ui/jquery-ui.js"></script>	
+	
+	<style>
+		@media (min-width: 768px) {
+			.modal-dialog {
+				width: 800px;
+				margin: 30px auto;
+			}	
+		}
+		.nav li a:hover, .nav li a:focus {
+			text-decoration: none;
+			background-color: #1a6496;
+			transition: 0.3s;
+		}
+		.nav-pills > li > a {
+			border-radius: 0px;
+			height: 45px;
+			line-height: 2;
+			padding: 10px 30px
+		}
+		.btn-info {
+			color: #fff;
+			background-color: #347cad;
+			border-color: #347cad;
+			border-radius: 0px;
+		}
+		.btn-primary{
+			color: #fff;
+			background-color: #347cad;
+			border-color: #347cad;
+			border-radius: 0px;
+		}
+		.modal-content {
+			position: relative;
+			background-color: #fff;
+			background-clip: padding-box;
+			border: 1px solid rgba(0, 0, 0, .2);
+			border-radius: 0;
+			outline: 0;
+			padding: 5px 20px;
+			box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+		}
+		.btn-info:active{
+			color: #fff;
+			background-color: #3396da;
+			border-color: #3396da;
+		}
+		.btn-info:hover{
+			color: #fff;
+			background-color: #3396da;
+			border-color: #3396da;
+			transition: 0.3s;
+		}
+		.btn-info:active{
+			color: #fff;
+			background-color: #3396da;
+			border-color: #3396da;
+		}
+	</style>
 </head>
 <body>
-	<div class="navbar navbar-default" style="background-color: #347cad; border-radius: 0px;border: 0px;">
+	<div class="navbar navbar-default" style="background-color: #03568e; border-radius: 0px;border: 0px; margin-bottom: 0;">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a href="#" class="navbar-brand" style="color: white;">DASHBOARD</a>
@@ -63,7 +121,7 @@
 		</div>
 	</div>
 
-	<div class="col-md-2">
+	<div class="col-md-2" style="background-color: #0a3450; min-height: 700px; padding: 25px 0;">
 		<!-- <div class="row">
 			<?php 
 			$use=$_SESSION['uname'];
@@ -84,15 +142,15 @@
 
 		<div class="row"></div>
 		<ul class="nav nav-pills nav-stacked">
-			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a href="dashboard.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Dashboard</a></li>
-			<li class=<?php if($active=='acc_hp'){echo 'active';}else{echo'noactive';}?>><a href="accesoris_hp.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Barang</a></li>			
-			<li class=<?php if($active=='kartu_perdana'){echo 'active';}else{echo'noactive';}?>><a href="kartu_perdana.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Kartu Perdana</a></li>      												                   												
-			<li><a href="promo.php"><span class="fa fa-percent"></span>&nbsp;&nbsp;Promo</a></li>
-			<li><a href="index.php"><span class="fa fa-tv"></span>&nbsp;&nbsp;Lihat Website</a></li>
-			<li class=<?php if($active=='tambah_admin'){echo 'active';}else{echo'noactive';}?>><a href="tambah_admin.php"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Tambahkan Admin</a></li>
-			<li class=<?php if($active=='ganti_pass'){echo 'active';}else{echo'noactive';}?>><a href="ganti_pass.php"><span class="fa fa-lock"></span>&nbsp;&nbsp;Ganti Password</a></li>		
-			<li><a href="logout.php"><span class="fa fa-reply"></span>&nbsp;&nbsp;Logout</a></li>			
+			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="dashboard.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Dashboard</a></li>
+			<li class=<?php if($active=='acc_hp'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="accesoris_hp.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Barang</a></li>			
+			<li class=<?php if($active=='kartu_perdana'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="kartu_perdana.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Kartu Perdana</a></li>      												                   												
+			<li><a style="color: white;" href="promo.php"><span class="fa fa-percent"></span>&nbsp;&nbsp;Promo</a></li>
+			<li><a style="color: white;" href="index.php"><span class="fa fa-tv"></span>&nbsp;&nbsp;Lihat Website</a></li>
+			<li class=<?php if($active=='tambah_admin'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="tambah_admin.php"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Tambahkan Admin</a></li>
+			<li class=<?php if($active=='ganti_pass'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="ganti_pass.php"><span class="fa fa-lock"></span>&nbsp;&nbsp;Ganti Password</a></li>		
+			<li><a style="color: white;" href="logout.php"><span class="fa fa-reply"></span>&nbsp;&nbsp;Logout</a></li>			
         </ul>
         
 	</div>
-	<div class="col-md-10">
+	<div class="col-md-10" style="min-height: 700px; padding: 10px 40px;">

@@ -54,12 +54,12 @@ $result = mysqli_query($mysqli, "select * from acc_hp");
                     $total_huruf = strlen($item_list['name']);
                     $str = strtoupper($item_list['name']);
 
-                    if($total_huruf > 15){
-                        echo "<span class='text-bold'>" . substr($str, 0, 15) . " ..." ."<br/>";
+                    if($total_huruf > 10){
+                        echo "<span class='text-bold'>" . substr($str, 0, 10) . " ..." ."<br/>";
                     }else{
                         echo "<span class='text-bold'>" . $str . "<br/>";
                     }
-                    echo "<span>Harga : Rp. " .number_format($item_list['harga']). "</span>";
+                    echo "<span>Harga : Rp. " .number_format($item_list['harga'],0,',','.'). "</span>";
                     echo "<a href='#' class='btn btn-primary button-detail item-detail-button'>Detail</a>";
                     echo "</div></div></div>";
                 }

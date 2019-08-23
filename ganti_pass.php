@@ -43,9 +43,13 @@ if(isset($_GET['pesan'])){
 		</div>																	
 	</form>
 </div>
+</div>
 
+<div class="col-md-12 padding-0">
+		<div class="footer2" style="height: 70px; text-align: center; padding-top: 10px; line-height: 1.5; background-color: #5877df; color: white;">
+			<span>© WkAcc - 2019 All Rights Reserved <br/> Design by Rian @zainulfebrian70@gmail.com</span>
+		</div>
+</div>
 
-<?php 
-include 'footer.php';
-
-?>
+</head>
+</html>
