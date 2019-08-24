@@ -72,13 +72,30 @@
 			background-color: #3396da;
 			border-color: #3396da;
 		}
+		.form-control {
+			display: block;
+			width: 100%;
+			height: 34px;
+			margin-top: 4px;
+			padding: 6px 12px;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #555;
+			border-radius: 0px;
+			background-color: #fff;
+			background-image: none;
+			border: 1px solid #c7c7c7;
+			-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+			-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+			transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		}
 	</style>
 </head>
 <body>
-	<div class="navbar navbar-default" style="background-color: #03568e; border-radius: 0px;border: 0px; margin-bottom: 0;">
+	<div class="navbar navbar-default" style="background-color: #03568e;border-radius: 0px;border: 0px;margin-bottom: 0;z-index: 4;width: 100%;position: fixed;">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand" style="color: white;">DASHBOARD</a>
+				<span class="navbar-brand" style="color: white;">DASHBOARD <span style="font-size: 12px">v1</span></span>
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
@@ -121,7 +138,7 @@
 		</div>
 	</div>
 
-	<div class="col-md-2" style="background-color: #0a3450; min-height: 700px; padding: 25px 0;">
+	<div class="col-md-2" style="background-color: #0a3450; max-height: 1180px; height: 1180px;;padding: 25px 0;margin-top: 40px;position: fixed;"">
 		<!-- <div class="row">
 			<?php 
 			$use=$_SESSION['uname'];
@@ -153,4 +170,4 @@
         </ul>
         
 	</div>
-	<div class="col-md-10" style="min-height: 700px; padding: 10px 40px;">
+	<div class="col-md-10" style="min-height: 700px;width: 81%;margin: 70px 0 65px 18%;padding: 10px 25px;"">

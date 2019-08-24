@@ -12,15 +12,11 @@ $result = mysqli_query($mysqli, "select * from acc_hp");
         <li class="list-group-item">Lainnya</li>
     </ul> -->
 
-    <div class="promo-item">
-        <div class="card" style="width: 100%; margin-top: 15px; padding-top: 10px;">
-            <img src="uploads/19082019140809jbl.jpg" class="card-img-top" style="width: 50%; display: block; margin: 0 auto;" alt="...">
-            <div class="card-body" style="padding: 15px 20px;">
-                <h5 class="card-title">Promo 17 Agustus</h5>
-                <p class="card-text">Dapatkan diskon 17% di item tertentu</p></p>
-                <a href="#" class='btn btn-primary button-detail item-detail-button-promo'>Detail</a>
-            </div>
-        </div>
+    <div class="search">
+        <form class="form-inline" style="margin-bottom: 0;">
+            <input name="cari" class="form-control" style="width: 80%; padding: 20px 26px; border-radius: 5px 0 0 5px;" placeholder="Cari barang ...">
+            <button class="btn btn-primary" style="width:20%; color: #fff;height: 42px;border-radius: 0px 0px 0px 0px;background-color: #6a8af3;border-color: #8a9fe800;" type="submit"><i class="fa fa-search"></i></button>
+        </form>
     </div>
 
     <ul class="list-group content-left kategori">
@@ -31,7 +27,7 @@ $result = mysqli_query($mysqli, "select * from acc_hp");
                 $no=1;
 
                 while($item_list = mysqli_fetch_array($brg)) { 
-                    echo "<div class='col-sm-6 padding-5'>";
+                    echo "<div class='col-sm-12 padding-5'>";
                     echo "<div class='card-item'>";
                     // if($item_list['label'] == "Baru"){
                     //     echo "<div class='label' style='background-color: #349cdd;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";

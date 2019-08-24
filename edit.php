@@ -118,17 +118,6 @@ while($data=mysqli_fetch_array($detail)){
 					</td>
 				</tr>
 				<tr>
-					<td><label>Deskripsi</label></td>
-					<?php
-						$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
-						while($data=mysqli_fetch_array($detail)){
-					?>
-					<td colspan="2"><textarea name="desk" style="height: 150px; white-space: pre-line;" type="text" class="form-control" placeholder="Masukkan Deskripsi"><?php echo $data['deskripsi']?></textarea></td>
-					<?php
-						}
-					?>
-				</tr>
-				<tr>
 					<td colspan="3">
 						<label>Link Tokopedia</label>
 						<?php
@@ -142,6 +131,19 @@ while($data=mysqli_fetch_array($detail)){
 					</td>
 				</tr>
 				<tr>
+					<?php
+						$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
+						while($data=mysqli_fetch_array($detail)){
+					?>
+					<td colspan="2">
+						<label>Deskripsi</label>
+						<textarea name="desk" style="height: 500px; white-space: pre-line;" type="text" class="form-control" placeholder="Masukkan Deskripsi"><?php echo $data['deskripsi']?></textarea>
+					</td>
+					<?php
+						}
+					?>
+				</tr>
+				<tr>
 					<td></td>
 					<td><input type="submit" name="upload" class="btn btn-info" value="Simpan"></td>
 				</tr>
@@ -153,7 +155,7 @@ while($data=mysqli_fetch_array($detail)){
 				$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
 				while($data=mysqli_fetch_array($detail)){
 			?>
-			<img style="width: 70%" src="uploads/<?php echo $data['file_name'];?>">
+			<img style="width: 60%" src="uploads/<?php echo $data['file_name'];?>">
 			<form action="edit_image_item.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">	
 					<input type="file" name="foto" class="form-control">				
@@ -180,4 +182,13 @@ while($data=mysqli_fetch_array($detail)){
 	<?php 
 }
 ?>
-<?php include 'footer.php'; ?>
+</div>
+
+<div class="col-md-12 padding-0">
+		<div class="footer2" style="height: 70px; text-align: center; padding-top: 15px; line-height: 1.5; background-color: #03568e; color: white;">
+			<span>© WkAcc - 2019 All Rights Reserved <br/> Design by Rian @zainulfebrian70@gmail.com</span>
+		</div>
+</div>
+
+</head>
+</html>

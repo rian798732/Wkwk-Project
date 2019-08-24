@@ -22,7 +22,7 @@ include_once("scripts/config.php");
 <body>
     <div class="row" style="width: 100%; margin: 0;">
         <div class="col-lg-12" style="padding: 0; position: fixed; z-index: 3;">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #5877df!important">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 5px 20px; background-color: #5877df!important">
                 <img class="navbar-image" src="images/logo.png" width="60px">
                 <a class="navbar-brand color-white" style="" href="index.php">WKACC Website</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@ include_once("scripts/config.php");
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav" style="margin-left: auto; margin-right: auto;">
                         <li class="nav-item active">
-                            <a class="nav-link color-white" href="#">Home</a>
+                            <a class="nav-link color-white" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link color-white" href="#">Promo</a>
@@ -66,10 +66,6 @@ include_once("scripts/config.php");
                             <a class="nav-link color-white" href="#">About us</a>
                         </li>
                     </ul>
-                    <!-- <form class="form-inline" style="margin-bottom: 0;">
-                        <input class="form-control" style="width: 80%; padding: 20px 26px; border-radius: 25px 0px 0px 25px;" placeholder="Cari barang">
-                        <button class="btn btn-primary" style="color: #fff;height: 42px;border-radius: 0px 0px 0px 0px;background-color: #96aaec;border-color: #8a9fe800;" type="submit"><i class="fa fa-search"></i></button>
-                    </form> -->
                 </div>
             </nav>
         </div>
@@ -98,7 +94,16 @@ include_once("scripts/config.php");
                             $kategori=mysqli_real_escape_string($mysqli, $_GET['kategori']);
                             $brg=mysqli_query($mysqli, "select * from acc_hp where kategori like '$kategori'");
                             echo "<div class='col-md-12 padding-0' style='text-align: center; margin-bottom: 10px;'>". $_GET['kategori'] ."</h5></div>";
-                        }else{
+                        }
+                        else if(isset($_GET['cari'])){
+                            $cari=mysqli_real_escape_string($mysqli, $_GET['cari']);
+                            $brg=mysqli_query($mysqli, "select * from acc_hp where merek like '%$cari%' or kategori like '%$cari%' or name like '%$cari%'");
+                            
+                            if($_GET['cari'] != null){
+                                echo "<div class='col-md-12 padding-0' style='text-align: center; margin-bottom: 10px;'> Hasil Pencarian : &quot;". $_GET['cari'] ."&quot;</h5></div>";
+                            }
+                        }
+                        else{
                             $brg=mysqli_query($mysqli, "select * from acc_hp limit $start, $per_hal");
                         }
                         $no=1;
@@ -127,8 +132,8 @@ include_once("scripts/config.php");
                             $total_huruf = strlen($item_list['name']);
                             $str = strtoupper($item_list['name']);
 
-                            if($total_huruf > 15){
-                                echo "<span class='text-bold'>" . substr($str, 0, 15) . " ..." ."<br/>";
+                            if($total_huruf > 14){
+                                echo "<span class='text-bold'>" . substr($str, 0, 13) . " ..." ."<br/>";
                             }else{
                                 echo "<span class='text-bold'>" . $str . "<br/>";
                             }

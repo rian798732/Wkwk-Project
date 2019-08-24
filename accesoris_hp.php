@@ -3,12 +3,6 @@ $active= 'acc_hp';
 include 'layouts/header.php'; 
 include 'scripts/config.php';?>
 
-<h3><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Semua Aksesoris</h3>
-<button style="margin-bottom:20px" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Tambah Data Barang</button>
-
-<br/>
-<br/>
-
 <?php
 $per_hal=10;
 $jumlah_record=mysqli_query($mysqli,"SELECT count(*) from acc_hp");
@@ -24,18 +18,20 @@ if($jum == 0){
 }
 ?>
 
-<form action="cari_acc_hp_act.php" method="get">
+<div class="col-md-12 padding-0">
+	<button style="margin-bottom:20px" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Tambah Barang</button>
+	<form action="cari_acc_hp_act.php" method="get">
 	<div class="input-group col-md-5 col-md-offset-7">
-		<span class="input-group-addon" id="basic-addon1"><span class="fa fa-search"></span></span>
-		<input type="text" class="form-control" placeholder="Cari barang di sini .." aria-describedby="basic-addon1" name="cari">	
+		<button class="btn btn-primary" id="basic-addon1"><span class="fa fa-search"></span></button>
+		<input type="text" style="width:70%; margin: 0;" class="form-control" placeholder="Cari Barang .." aria-describedby="basic-addon1" name="cari">	
 	</div>
 </form>
-<br/>
-<table class="table table-striped">
+</div>
+<table class="table table-striped" style="margin-top: 15px;">
 	<tr>
 		<th class="col-md-1">No</th>
 		<th class="col-md-2">Nama Barang</th>
-		<th class="col-md-1">Warna</th>	
+		<th class="col-md-1">Merek</th>	
         <th class="col-md-2">Deskripsi</th>		
 		<th class="col-md-1">Harga</th>
 		<th class="col-md-1">Label</th>		
@@ -45,7 +41,9 @@ if($jum == 0){
 	<?php 
 	if(isset($_GET['cari'])){
 		$cari=mysqli_real_escape_string($mysqli, $_GET['cari']);
-		$brg=mysqli_query($mysqli, "select * from acc_hp where merek like '$cari' or kategori like '$cari'");
+		$brg=mysqli_query($mysqli, "select * from acc_hp where merek like '%$cari%' or kategori like '%$cari%' or name like '%$cari%'");
+
+		echo '<span>Hasil Pencarian : "'. $cari . '"</span>';
 	}else{
 		$brg=mysqli_query($mysqli, "select * from acc_hp limit $start, $per_hal");
 	}
@@ -55,7 +53,7 @@ if($jum == 0){
 		<tr>
 			<td><?php echo $no++ ?></td>
 			<?php echo "<td>". $b['name'];?></td>
-            <td><?php echo $b['warna']?></td>
+            <td><?php echo $b['merek']?></td>
 			<td>
 				<span>
                     <?php 
@@ -106,6 +104,7 @@ if($jum == 0){
 				<h4 class="modal-title">Tambah Acc Smartphone Baru</h4>
 			</div>
 			<div class="modal-body">
+				<div class="row">
 				<form action="acc_hp_act.php" method="post" enctype="multipart/form-data">
 					<div class="col-md-4 padding-0 form-group" style="margin-right: 5px;">
 						<label>Nama Barang</label>
@@ -169,6 +168,7 @@ if($jum == 0){
 						<label>Deskripsi</label>
                         <textarea name="desk" type="text" class="form-control" placeholder="Masukkan Spesifikasi"></textarea>
                     </div>
+				</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
