@@ -20,6 +20,7 @@ if($jum == 0){
 
 <div class="col-md-12 padding-0">
 	<button style="margin-bottom:20px" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Tambah Barang</button>
+	<button style="margin-bottom:20px;background-color: #f1a117;border-color: #f1a117; margin-left: 10px;" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Tambah Merek</button>
 	<form action="cari_acc_hp_act.php" method="get">
 	<div class="input-group col-md-5 col-md-offset-7">
 		<button class="btn btn-primary" id="basic-addon1"><span class="fa fa-search"></span></button>
@@ -124,7 +125,7 @@ if($jum == 0){
 							?>
 						</select>
 					</div>
-					<!-- <div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
+					<div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
 						<label>Merek</label>
 						<select class="form-control" id="kategori" name="merek">
 							<option>Belum Dipilih</option>
@@ -137,12 +138,12 @@ if($jum == 0){
 								}
 							?>
 						</select>
-					</div> -->
-                    <div class="col-md-3 padding-0 form-group">
+					</div>
+                    <div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
 						<label>Harga</label>
 						<input name="harga" type="text" class="form-control" placeholder="Harga">
 					</div>
-                    <div class="col-md-6 padding-0 form-group" style="margin-right: 10px;">
+                    <div class="col-md-3 padding-0 form-group" style="margin-right: 10px;">
 						<label>Label</label>
 						<select class="form-control" id="kategori" name="label">
 							<option>Belum Dipilih</option>
@@ -160,7 +161,11 @@ if($jum == 0){
 						<label>Link Tokopedia</label>
                         <input name="link" type="text" class="form-control" placeholder="Masukkan Link">
                     </div>
-					<div class="col-md-12 form-group padding-0">
+					<div class="col-md-4 padding-0 form-group" style="margin-right: 110px;">
+						<label>Warna</label>
+						<input name="warna" type="text" class="form-control" placeholder="Masukkan Warna Barang">
+					</div>
+					<div class="col-md-6 form-group padding-0">
 						<label>Gambar</label>
 						<input type="file" name="foto"> <span style="color: red;"><br/>* Pastikan gambar berukuran 224 x 224 atau ambil gambar yang ada di tokopedia</span>
                     </div>

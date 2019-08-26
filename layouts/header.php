@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<?php 
+<?php 
 	session_start();
 	include 'scripts/cek.php';
 	include 'scripts/config.php';
-	?>
+?>
+<!DOCTYPE html>
+<html>
+<head>
 	<title>DASHBOARD</title>
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap-v3.css">
 	<link rel="stylesheet" type="text/css" href="styles/fontawesome/css/all.min.css">
