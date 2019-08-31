@@ -4,9 +4,9 @@ include 'layouts/header.php';
 include 'scripts/config.php';?>
 
 <?php
-$per_hal=10;
+$per_hal=20;
 $jumlah_record=mysqli_query($mysqli,"SELECT count(*) from acc_hp");
-// $jum=mysqli_query($mysqli, '$jumlah_record');
+$jum=mysqli_query($mysqli, '$jumlah_record');
 $jum = mysqli_fetch_array($jumlah_record, MYSQLI_NUM);
 
 if($jum == 0){
@@ -20,7 +20,7 @@ if($jum == 0){
 
 <div class="col-md-12 padding-0">
 	<button style="margin-bottom:20px" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Tambah Barang</button>
-	<button style="margin-bottom:20px;background-color: #f1a117;border-color: #f1a117; margin-left: 10px;" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2"><span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Tambah Merek</button>
+	<button style="margin-bottom:20px;background-color: #f1a117;border-color: #f1a117; margin-left: 10px;" data-toggle="modal" data-target="#modalLabel" class="btn btn-info col-md-2"><span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Tambah Label</button>
 	<form action="cari_acc_hp_act.php" method="get">
 	<div class="input-group col-md-5 col-md-offset-7">
 		<button class="btn btn-primary" id="basic-addon1"><span class="fa fa-search"></span></button>
@@ -46,9 +46,11 @@ if($jum == 0){
 
 		echo '<span>Hasil Pencarian : "'. $cari . '"</span>';
 	}else{
-		$brg=mysqli_query($mysqli, "select * from acc_hp limit $start, $per_hal");
+		$brg=mysqli_query($mysqli, "select * from acc_hp order by id desc limit $start, $per_hal");
 	}
-	$no=1;
+	$show = $page * $per_hal - $per_hal;
+	$no = $show + 1;
+
 	while($b=mysqli_fetch_array($brg)){
 		?>
 		<tr>
@@ -97,12 +99,63 @@ if($jum == 0){
 	?>						
 </ul>
 <!-- modal input -->
+<div id="modalLabel" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Tambah Label Baru</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+				<form action="tambah_label_act.php" method="post" enctype="multipart/form-data">
+					<div class="col-md-4 padding-0 form-group" style="margin-right: 5px;">
+						<label>ID Label</label>
+						<?php
+							$query = "SELECT max(id_label) as maxId FROM label";
+							$hasil=mysqli_query($mysqli, $query);
+							$data = mysqli_fetch_array($hasil);
+							$idLabel = $data['maxId'];
+
+							$noUrut = (int) substr($idLabel, 3, 3);
+
+							$noUrut++;
+
+							$char = "LBL";
+							$idLabel = $char . sprintf("%03s", $noUrut);
+						?>
+						<input name="id_label" type="text" class="form-control" readonly="" value="<?php echo $idLabel;?>">
+					</div>
+					<div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
+						<label>Label</label>
+						<input class="form-control" type="text" id="kategori" name="nama_label" placeholder="Masukkan Merek">
+					</div>
+                    <div class="col-md-4 padding-0 form-group" style="margin-right: 5px;">
+						<label>Warna Background</label>
+						<select name="warna_bg" class="form-control">
+							<option>Kuning</option>
+							<option>Merah</option>
+							<option>Biru</option>
+							<option>Hijau</option>
+						</select>
+					</div>
+				</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+					<input type="submit" class="btn btn-primary" name="upload" value="Simpan">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Tambah Acc Smartphone Baru</h4>
+				<h4 class="modal-title">Tambah Accessoris Baru</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -127,17 +180,7 @@ if($jum == 0){
 					</div>
 					<div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
 						<label>Merek</label>
-						<select class="form-control" id="kategori" name="merek">
-							<option>Belum Dipilih</option>
-							<?php
-								$merek = mysqli_query($mysqli, "select * from merek");
-								while($data = mysqli_fetch_array($merek)){
-							?>
-							<option><?php echo $data['nama_merek']; ?></option>
-							<?php
-								}
-							?>
-						</select>
+						<input class="form-control" type="text" id="kategori" name="merek" placeholder="Masukkan Merek">
 					</div>
                     <div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
 						<label>Harga</label>
@@ -167,7 +210,7 @@ if($jum == 0){
 					</div>
 					<div class="col-md-6 form-group padding-0">
 						<label>Gambar</label>
-						<input type="file" name="foto"> <span style="color: red;"><br/>* Pastikan gambar berukuran 224 x 224 atau ambil gambar yang ada di tokopedia</span>
+						<input type="file" name="foto"> <span style="color: red;"><br/>* Pastikan ukuran gambar < 6MB atau ambil gambar yang ada di tokopedia</span>
                     </div>
 					<div class="col-md-12 form-group padding-0" style="min-height: 50px;">
 						<label>Deskripsi</label>

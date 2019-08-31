@@ -51,23 +51,7 @@ while($data=mysqli_fetch_array($detail)){
 				<tr>
 					<td>
 						<label>Merek</label>
-						<select class="form-control" id="merek" name="merek">
-							<?php
-								$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
-								while($data=mysqli_fetch_array($detail)){
-							?>
-								<option><?php echo $data['merek'] ?></option>
-								<option>---- Pilih Menu Dibawah Untuk Mengganti ----</option>
-								<?php
-								}
-									$merek = mysqli_query($mysqli, "select * from merek");
-									while($data = mysqli_fetch_array($merek)){
-								?>
-								<option><?php echo $data['nama_merek']; ?></option>
-								<?php
-									}
-								?>
-						</select>
+						<input class="form-control" type="text" id="merek" name="merek" placeholder="Masukkan Merek">
 					</td>
 					<td>
 						<label>Warna</label>

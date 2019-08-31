@@ -14,7 +14,7 @@
     $ext = pathinfo($foto, PATHINFO_EXTENSION);
 
         // Rename nama fotonya dengan menambahkan tanggal dan jam upload
-    $fotobaru = date('dmYHis').$foto;
+    $fotobaru = $foto;
     // Set path folder tempat menyimpan fotonya
     $path = "uploads/".$fotobaru;
     // Proses upload
@@ -27,11 +27,15 @@
         // Jika Sukses, Lakukan :
         header("location: accesoris_hp.php"); // Redirect ke halaman index.php
       }else{
-        // Jika Gagal, Lakukan :
         echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
         echo "<br><a href='accesoris_hp.php'>Kembali Ke Form</a>";
       }
-    }else{
+    }else if($foto == null){
+      // Jika Gagal, Lakukan :
+      echo "Maaf, Gambar Belum Di Masukkan";
+      echo "<br><a href='accesoris_hp.php'>Kembali Ke Form</a>";
+    }
+    else{
       // Jika gambar gagal diupload, Lakukan :
       echo "Maaf, Gambar gagal untuk diupload. Mungkin karena ukuran file terlalu besar";
       echo "<br><a href='accesoris_hp.php'>Kembali Ke Halaman Sebelumnya</a>";

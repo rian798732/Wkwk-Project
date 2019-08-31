@@ -145,7 +145,7 @@ li.list-group-item.title-group.active{
     padding: 0 0 0 0;
 }
 .tabel-detail{
-    width: 60%;
+    width: 60%!important;
     position: absolute;
     top: 15px;
     right: 60px;
@@ -274,4 +274,9 @@ li.list-group-item.title-group.active{
     width: 55%;
     height: 30px;
     line-height: 1.2;
+}
+.table{
+    width:100%; 
+    table-layout: fixed;
+    overflow-wrap: break-word;
 }
