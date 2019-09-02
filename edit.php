@@ -3,16 +3,16 @@ $active = "acc_hp";
 include 'layouts/header.php';
 ?>
 <h3><span class="fa fa-edit"></span>  Edit Barang</h3>
-<a class="btn" href="dashboard.php"><span class="glyphicon glyphicon-arrow-left"></span>  Kembali</a>
+<a class="btn" href="accesoris.php"><span class="fa fa-arrow-left"></span>  Kembali</a>
 <?php
 $id = isset($_GET['id']) ? $_GET['id'] : '';
-$name = isset($_GET['name']) ? $_GET['nzme'] : '';
+$name = isset($_GET['name']) ? $_GET['name'] : '';
 $detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
 while($data=mysqli_fetch_array($detail)){
 ?>					
 	<div class="row">
 		<div class="col-md-8"> 
-			<form action="edit_act.php" method="post" enctype="multipart/form-data">
+			<form action="edit_promo_act.php" method="post" enctype="multipart/form-data">
 			<table class="table" style="width: 100%;">
 				<tr>
 					<td> 

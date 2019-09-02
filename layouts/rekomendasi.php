@@ -20,46 +20,24 @@ $result = mysqli_query($mysqli, "select * from acc_hp");
     </div>
 
     <ul class="list-group content-left kategori">
-        <li class="list-group-item title-group">Rekomendasi</li>
+        <li class="list-group-item title-group">PROMO TERBARU</li>
         <div class="row items-group">
             <?php
-                $brg=mysqli_query($mysqli, "select * from acc_hp limit 1, 2");
-                $no=1;
-
-                while($item_list = mysqli_fetch_array($brg)) { 
-                    echo "<div class='col-sm-12 padding-5'>";
-                    echo "<div class='card-item'>";
-                    // if($item_list['label'] == "Baru"){
-                    //     echo "<div class='label' style='background-color: #349cdd;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
-                    // }else if($item_list['label'] == "Preorder"){
-                    //     echo "<div class='label' style='background-color: #5acf60;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
-                    // }
-                    // else if($item_list['label'] == "Habis"){
-                    //     echo "<div class='label' style='background-color: #e94545;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
-                    // }
-                    // else if($item_list['label'] == "Bekas"){
-                    //     echo "<div class='label' style='background-color: #244b68;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
-                    // }
-                    // else if($item_list['label'] == "Terbatas"){
-                    //     echo "<div class='label' style='background-color: #965acf;'><span class='label-text'>". strtoupper($item_list['label']). "</span></div>";
-                    // }
-                    ?>
-                <img class="image-item" src="<?php echo "uploads/".$item_list['file_name']; ?>">
-                <?php
-                    echo "<div class='information'>";
-                    $total_huruf = strlen($item_list['name']);
-                    $str = strtoupper($item_list['name']);
-
-                    if($total_huruf > 10){
-                        echo "<span class='text-bold'>" . substr($str, 0, 10) . " ..." ."<br/>";
-                    }else{
-                        echo "<span class='text-bold'>" . $str . "<br/>";
-                    }
-                    echo "<span>Harga : Rp. " .number_format($item_list['harga'],0,',','.'). "</span>";
-                    echo "<a href='#' class='btn btn-primary button-detail item-detail-button'>Detail</a>";
-                    echo "</div></div></div>";
-                }
+                $query = mysqli_query($mysqli, "select * from promo order by id_promo desc limit 3");
+                while($promo = mysqli_fetch_array($query)){
             ?>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-12">
+                        <div class="card-body" style="width: 100%; padding: 12px 20px;">
+                            <h5 class="card-title"><?php echo $promo['judul_promo'];?></h5>
+                            <p class="card-text"><?php echo $promo['keterangan'];?></p>
+                            <a class="card-text" href="promo.php"><small>Lihat Selengkapnya</small></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <?php }?>
         </div>     
     </ul>
 </div>

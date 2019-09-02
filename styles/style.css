@@ -31,7 +31,11 @@
 }
 .nav-link:hover{
     color: #a5bad1!important;
-    transition: 0.5s;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
 }
 .form{
     margin-right: 80pt;

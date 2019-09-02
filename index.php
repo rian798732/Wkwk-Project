@@ -85,7 +85,7 @@ include_once("scripts/config.php");
                                 echo "<span class='text-bold'>" . $str . "<br/>";
                             }
                             echo "<span>Harga : Rp. " .number_format($item_list['harga'],0,',','.'). "</span>";
-                            echo "<a href='#' class='btn btn-primary button-detail item-detail-button'>Detail</a>";
+                            echo "<a href='detail_barang.php?id=" . $item_list['id'] ."' class='btn btn-primary button-detail item-detail-button'>Detail</a>";
                             echo "</div></div></div>";
                         }
                     ?>

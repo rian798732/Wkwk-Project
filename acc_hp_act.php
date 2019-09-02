@@ -25,20 +25,20 @@
       $sql = mysqli_query($mysqli, $query); // Eksekusi/ Jalankan query dari variabel $query
       if($sql){ // Cek jika proses simpan ke database sukses atau tidak
         // Jika Sukses, Lakukan :
-        header("location: accesoris_hp.php"); // Redirect ke halaman index.php
+        header("location: accesoris.php"); // Redirect ke halaman index.php
       }else{
         echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-        echo "<br><a href='accesoris_hp.php'>Kembali Ke Form</a>";
+        echo "<br><a href='accesoris.php'>Kembali Ke Form</a>";
       }
     }else if($foto == null){
       // Jika Gagal, Lakukan :
       echo "Maaf, Gambar Belum Di Masukkan";
-      echo "<br><a href='accesoris_hp.php'>Kembali Ke Form</a>";
+      echo "<br><a href='accesoris.php'>Kembali Ke Form</a>";
     }
     else{
       // Jika gambar gagal diupload, Lakukan :
       echo "Maaf, Gambar gagal untuk diupload. Mungkin karena ukuran file terlalu besar";
-      echo "<br><a href='accesoris_hp.php'>Kembali Ke Halaman Sebelumnya</a>";
+      echo "<br><a href='accesoris.php'>Kembali Ke Halaman Sebelumnya</a>";
     }
 ?>
 
@@ -99,7 +99,7 @@
 
 //             $insert = $mysqli->query("INSERT INTO acc_hp(name, kategori, merek, warna, harga, deskripsi, label, file_name, file_size, file_type) VALUES('$name_brg','$kategori','$merek','$warna','$harga','$deskripsi','$label', '$name', '$size', '$ext')");
 //             if($insert){
-//                 header("location:accesoris_hp.php");
+//                 header("location:accesoris.php");
 //                 echo '<div class="alert alert-success">File berhasil di upload.</div>';
 //             }else{
 //               echo '<div class="alert alert-warning">Gagal upload file.</div>';

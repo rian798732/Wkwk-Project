@@ -42,6 +42,9 @@
                         <li class="nav-item">
                             <a class="nav-link color-white" href="#">About us</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-white" href="#">FAQ</a>
+                        </li>
                     </ul>
                 </div>
             </nav>

@@ -11,6 +11,6 @@ $desk=$_POST['desk'];
 $link=$_POST['link'];
 
 mysqli_query($mysqli, "UPDATE acc_hp set name='$nama',kategori='$kategori', merek='$merek', warna='$warna', harga='$harga', deskripsi='$desk', label='$label', link_tokped='$link' where id='$id'");
-header("location:accesoris_hp.php");
+header("location:accesoris.php");
 
 ?>

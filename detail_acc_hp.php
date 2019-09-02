@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<a href="accesoris_hp.php" class="btn btn-primary">Kembali</a>
+<a href="accesoris.php" class="btn btn-primary">Kembali</a>
 <div style="position: relative; height: 450px;">
     <?php
         $detail=$_GET['id'];

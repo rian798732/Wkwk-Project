@@ -11,45 +11,33 @@
     <div class="row" style="width: 150%; margin: 0;">
         <?php include 'layouts/navbar.php';?>
     </div>    
-    
-    <?php include("layouts/rekomendasi.php")?>
-
-    <div class="col-sm-9">
-        <div class="row padding-0">
-            <div class="col-md-6">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4 padding-0">
-                        <img src="..." class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4 padding-0">
-                        <img src="..." class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
+    <div class="row" style="padding:20px; margin: 80px 0 0 0;;">
+        <div class="col-sm-12">
+            <div class="row padding-0">
+                <?php
+                    $query = mysqli_query($mysqli, "select * from promo");
+                    while($promo = mysqli_fetch_array($query)){
+                ?>
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4 padding-0">
+                            <img src="images/logo.jpg" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo strtoupper($promo['judul_promo']); ?></h5>
+                                <p class="card-text"><?php echo $promo['keterangan']; ?></p>
+                                <p class="card-text"><small class="text-muted">Berlaku&nbsp;<span><?php echo $promo['berlaku_mulai'];?></span><span>&nbsp;-&nbsp;<?php echo $promo['sampai_dengan']; ?></span></small></p>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <?php }?>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

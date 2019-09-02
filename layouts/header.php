@@ -160,9 +160,9 @@
 		<div class="row"></div>
 		<ul class="nav nav-pills nav-stacked">
 			<li class=<?php if($active=='dashboard'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="dashboard.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Dashboard</a></li>
-			<li class=<?php if($active=='acc_hp'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="accesoris_hp.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Barang</a></li>			
-			<li class=<?php if($active=='kartu_perdana'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="kartu_perdana.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Kartu Perdana</a></li>      												                   												
-			<li><a style="color: white;" href="promo.php"><span class="fa fa-percent"></span>&nbsp;&nbsp;Promo</a></li>
+			<li class=<?php if($active=='acc_hp'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="accesoris.php"><span class="fa fa-briefcase"></span>&nbsp;&nbsp;Data Barang</a></li>			
+			<li class=<?php if($active=='kartu_perdana'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="kartu_perdana.php"><span class="fa fa-tag"></span>&nbsp;&nbsp;Daftar Label</a></li>		                   	
+			<li class="<?php if($active=='promo_dashboard'){echo 'active';}else{echo'noactive';}?>"><a style="color: white;" href="promo_dashboard.php"><span class="fa fa-percent"></span>&nbsp;&nbsp;Promo</a></li>
 			<li><a style="color: white;" href="index.php"><span class="fa fa-tv"></span>&nbsp;&nbsp;Lihat Website</a></li>
 			<li class=<?php if($active=='tambah_admin'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="tambah_admin.php"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Tambahkan Admin</a></li>
 			<li class=<?php if($active=='ganti_pass'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="ganti_pass.php"><span class="fa fa-lock"></span>&nbsp;&nbsp;Ganti Password</a></li>		

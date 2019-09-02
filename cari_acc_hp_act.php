@@ -1,4 +1,4 @@
 <?php 
 $cari=$_GET['cari'];
-header("location:accesoris_hp.php?cari=$cari");
+header("location:accesoris.php?cari=$cari");
 ?>
