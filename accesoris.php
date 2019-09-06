@@ -178,11 +178,11 @@ if($jum == 0){
 							?>
 						</select>
 					</div>
-					<div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
+					<div class="col-md-3 padding-0 form-group" style="margin-right: 10px;">
 						<label>Merek</label>
 						<input class="form-control" type="text" id="kategori" name="merek" placeholder="Masukkan Merek">
 					</div>
-                    <div class="col-md-3 padding-0 form-group" style="margin-right: 5px;">
+                    <div class="col-md-3 padding-0 form-group" style="margin-right: 10px;">
 						<label>Harga</label>
 						<input name="harga" type="text" class="form-control" placeholder="Harga">
 					</div>
@@ -200,14 +200,22 @@ if($jum == 0){
 							?>
 						</select>
 					</div>
-					<div class="col-md-5 form-group padding-0">
-						<label>Link Tokopedia</label>
-                        <input name="link" type="text" class="form-control" placeholder="Masukkan Link">
-                    </div>
-					<div class="col-md-4 padding-0 form-group" style="margin-right: 110px;">
+					<div class="col-md-4 padding-0 form-group" style="margin-right: 10px;">
 						<label>Warna</label>
 						<input name="warna" type="text" class="form-control" placeholder="Masukkan Warna Barang">
 					</div>
+					<div class="col-md-3 form-group padding-0" style="margin-right: 10px;">
+						<label>Link Tokopedia</label>
+                        <input name="link" type="text" class="form-control" placeholder="Masukkan Tokopedia">
+                    </div>
+					<div class="col-md-3 form-group padding-0" style="margin-right: 10px;">
+						<label>Link Shopee</label>
+                        <input name="link_shopee" type="text" class="form-control" placeholder="Masukkan Link Shopee">
+                    </div>
+					<div class="col-md-4 form-group padding-0">
+						<label>Link Lazada</label>
+                        <input name="link_lazada" type="text" class="form-control" placeholder="Masukkan Link Lazada">
+                    </div>
 					<div class="col-md-6 form-group padding-0">
 						<label>Gambar</label>
 						<input type="file" name="foto"> <span style="color: red;"><br/>* Pastikan ukuran gambar < 2MB atau ambil gambar yang ada di tokopedia</span>

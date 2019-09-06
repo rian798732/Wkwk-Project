@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="scripts/js/jquery.js"></script>
 	<script type="text/javascript" src="scripts/js/bootstrap.js"></script>
 	<script type="text/javascript" src="scripts/js/jquery-ui/jquery-ui.js"></script>	
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	
 	<style>
 		@media (min-width: 768px) {
@@ -95,7 +96,7 @@
 	<div class="navbar navbar-default" style="background-color: #03568e;border-radius: 0px;border: 0px;margin-bottom: 0;z-index: 4;width: 100%;position: fixed;">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<span class="navbar-brand" style="color: white;">DASHBOARD <span style="font-size: 12px">v1</span></span>
+				<span class="navbar-brand" style="color: white;">DASHBOARD <span style="font-size: 12px">WK ACCESSORIS v1</span></span>
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
@@ -105,8 +106,11 @@
 			</div>
 			<div class="collapse navbar-collapse">				
 				<ul class="nav navbar-nav navbar-right">
-					<li><a id="pesan_sedia" href="#" style="color: white;" data-toggle="modal" data-target="#modalpesan"><span class='fa fa-envelope'></span>  Pesan</a></li>
-					<li><a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#" style="color: white;">Hy , <?php echo $_SESSION['uname']  ?>&nbsp&nbsp<span class="fa fa-user"></span></a></li>
+					<li>
+						<a id="pesan_sedia" href="#" style="color: white;" data-toggle="modal" data-target="#modalpesan">Bantuan
+						<span class='fa fa-question-circle'></span></a>
+					</li>
+					<li><a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#" style="color: white;">Hai , <?php echo $_SESSION['uname']  ?>&nbsp&nbsp<span class="fa fa-user"></span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -118,17 +122,28 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Pesan Notification</h4>
+					<h4 class="modal-title">Bantuan</h4>
 				</div>
 				<div class="modal-body">
-					<?php 
+					<!-- <?php 
 						$periksa=mysqli_query($mysqli, "select * from barang where jumlah <=3");
 						while($q=mysqli_fetch_array($periksa)){	
 							if($q['jumlah']<=3){			
-								echo "<div style='padding:5px' class='alert alert-warning'><span class='fa fa-info-sign'></span> Stok  <a style='color:red'>". $q['nama']."</a> yang tersisa sudah kurang dari 3 . silahkan pesan lagi !!</div>";	
+								echo "<div style='padding:5px' class='alert alert-warning'><span class='fa fa-alert'></span> Stok  <a style='color:red'>". $q['nama']."</a> yang tersisa sudah kurang dari 3 . silahkan pesan lagi !!</div>";	
 							}
 						}
-					?>
+					?> -->
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#collapse1">1. Bagaimana Cara menambahkan barang?</a>
+							</h4>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse">
+							<div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						</div>
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>						
@@ -166,8 +181,9 @@
 			<li><a style="color: white;" href="index.php"><span class="fa fa-tv"></span>&nbsp;&nbsp;Lihat Website</a></li>
 			<li class=<?php if($active=='tambah_admin'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="tambah_admin.php"><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Tambahkan Admin</a></li>
 			<li class=<?php if($active=='ganti_pass'){echo 'active';}else{echo'noactive';}?>><a style="color: white;" href="ganti_pass.php"><span class="fa fa-lock"></span>&nbsp;&nbsp;Ganti Password</a></li>		
+			<li class="<?php if($active=='info_toko'){echo 'active';}else{echo'noactive';}?>"><a style="color: white;" href="info_toko.php"><span class="fa fa-home"></span>&nbsp;&nbsp;Informasi Toko</a></li>
 			<li><a style="color: white;" href="logout.php"><span class="fa fa-reply"></span>&nbsp;&nbsp;Logout</a></li>			
         </ul>
         
 	</div>
-	<div class="col-md-10" style="min-height: 700px;width: 81%;margin: 70px 0 65px 18%;padding: 10px 25px;"">
+	<div class="col-md-10" style="min-height: 700px; overflow: hidden; width: 81%;margin: 70px 0 65px 18%;padding: 10px 25px;"">

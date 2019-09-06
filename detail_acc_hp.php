@@ -18,7 +18,7 @@
         while($b=mysqli_fetch_array($dataDetail)){
     ?>
     <img class="image-item-dashboard" src="uploads/<?php echo $b['file_name']; ?>">
-    <table class="table table-striped tabel-detail">
+    <table class="table table-striped tabel-detail" style="left: 35%;">
         <tbody>
             <tr> 
                 <td style="width: 260px;">Nama Barang</td>
@@ -39,6 +39,18 @@
             <tr> 
                 <td style="width: 260px;">Kategori</td>
                 <td><?php echo $b['kategori']; ?></td>
+            </tr>
+            <tr> 
+                <td style="width: 260px;">Link Tokopedia</td>
+                <td><a href="<?php echo $b['link_tokped']; ?>">Lihat Tokopedia</a></td>
+            </tr>
+            <tr> 
+                <td style="width: 260px;">Link Lazada</td>
+                <td><a href="<?php echo $b['link_lazada']; ?>">Lihat Lazada</a></td>
+            </tr>
+            <tr> 
+                <td style="width: 260px;">Link Shopee</td>
+                <td><a href="<?php echo $b['link_shopee']; ?>">Lihat Shopee</a></td>
             </tr>
             <tr> 
                 <td style="width: 260px;">Harga</td>

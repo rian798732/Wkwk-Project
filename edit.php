@@ -12,7 +12,7 @@ while($data=mysqli_fetch_array($detail)){
 ?>					
 	<div class="row">
 		<div class="col-md-8"> 
-			<form action="edit_promo_act.php" method="post" enctype="multipart/form-data">
+			<form action="edit_act.php" method="post" enctype="multipart/form-data">
 			<table class="table" style="width: 100%;">
 				<tr>
 					<td> 
@@ -26,7 +26,7 @@ while($data=mysqli_fetch_array($detail)){
 								while($data=mysqli_fetch_array($detail)){
 							?>
 								<option><?php echo $data['kategori'] ?></option>
-								<option>---- Pilih Menu Dibawah Untuk Mengganti ----</option>
+								<option disabled>---- Pilih Menu Dibawah Untuk Mengganti ----</option>
 								<?php
 								}
 									$merek = mysqli_query($mysqli, "select * from kategori");
@@ -51,7 +51,11 @@ while($data=mysqli_fetch_array($detail)){
 				<tr>
 					<td>
 						<label>Merek</label>
-						<input class="form-control" type="text" id="merek" name="merek" placeholder="Masukkan Merek">
+						<?php
+							$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
+							while($data=mysqli_fetch_array($detail)){
+						?>
+						<input class="form-control" type="text" id="merek" name="merek" placeholder="Masukkan Merek" value="<?php echo $data['merek']; }?>">
 					</td>
 					<td>
 						<label>Warna</label>
@@ -77,7 +81,7 @@ while($data=mysqli_fetch_array($detail)){
 								while($data=mysqli_fetch_array($detail)){
 							?>
 								<option><?php echo $data['label'] ?></option>
-								<option>---- Pilih Menu Dibawah Untuk Mengganti ----</option>
+								<option disabled>---- Pilih Menu Dibawah Untuk Mengganti ----</option>
 								<?php
 								}
 								$label = mysqli_query($mysqli, "select * from label");
@@ -115,13 +119,39 @@ while($data=mysqli_fetch_array($detail)){
 					</td>
 				</tr>
 				<tr>
+					<td colspan="3">
+						<label>Link Shopee</label>
+						<?php
+							$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
+							while($data=mysqli_fetch_array($detail)){
+						?>
+						<input name="link_shopee" type="text" class="form-control" value="<?php echo $data['link_shopee']?>">
+						<?php 
+							} 
+						?>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<label>Link Lazada</label>
+						<?php
+							$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
+							while($data=mysqli_fetch_array($detail)){
+						?>
+						<input name="link_lazada" type="text" class="form-control" value="<?php echo $data['link_lazada']?>">
+						<?php 
+							} 
+						?>
+					</td>
+				</tr>
+				<tr>
 					<?php
 						$detail=mysqli_query($mysqli, "select * from acc_hp where id='$id'");
 						while($data=mysqli_fetch_array($detail)){
 					?>
 					<td colspan="2">
 						<label>Deskripsi</label>
-						<textarea name="desk" style="height: 500px; white-space: pre-line;" type="text" class="form-control" placeholder="Masukkan Deskripsi"><?php echo $data['deskripsi']?></textarea>
+						<textarea name="desk" style="width: 100%; height: 300px; white-space: pre-line; margin-bottom: 20px;" type="text" class="form-control" placeholder="Masukkan Deskripsi"><?php echo $data['deskripsi']?></textarea>
 					</td>
 					<?php
 						}
@@ -129,7 +159,7 @@ while($data=mysqli_fetch_array($detail)){
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" name="upload" class="btn btn-info" value="Simpan"></td>
+					<td><center><input type="submit" name="upload" class="btn btn-info" value="Simpan"></td></center>
 				</tr>
 			</table>
 		</form>

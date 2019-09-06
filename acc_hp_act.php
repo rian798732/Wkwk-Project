@@ -8,6 +8,8 @@
     $label=$_POST['label'];
     $deskripsi=$_POST['desk'];
     $link=$_POST['link'];
+    $link_shopee=$_POST['link_shopee'];
+    $link_lazada=$_POST['link_lazada'];
     $foto = $_FILES['foto']['name'];
     $tmp = $_FILES['foto']['tmp_name'];
     $size = $_FILES['foto']['size'];
@@ -20,7 +22,7 @@
     // Proses upload
     if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
       // Proses simpan ke Database
-      $query = "INSERT INTO acc_hp(name, kategori, merek, warna, harga, deskripsi, label, link_tokped, file_name, file_size, file_type) VALUES('$nama_barang','$kategori','$merek','$warna','$harga','$deskripsi','$label', '$link','$fotobaru', '$size', '$ext')";
+      $query = "INSERT INTO acc_hp(name, kategori, merek, warna, harga, deskripsi, label, link_tokped, link_shopee, link_lazada, file_name, file_size, file_type) VALUES('$nama_barang','$kategori','$merek','$warna','$harga','$deskripsi','$label', '$link', '$link_shopee', '$link_lazada', '$fotobaru', '$size', '$ext')";
 
       $sql = mysqli_query($mysqli, $query); // Eksekusi/ Jalankan query dari variabel $query
       if($sql){ // Cek jika proses simpan ke database sukses atau tidak

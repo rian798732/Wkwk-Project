@@ -20,12 +20,12 @@
 				<div class="col-md-4 col-md-offset-4 kotak">
                     <h3>Masukkan Data Admin</h3>
 					<div class="input-group">
-						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-						<input type="text" class="form-control" placeholder="Username" name="uname">
+						<span class="input-group-addon"><span class="fa fa-user"></span></span>
+						<input type="text" style="margin-top: 0; height: 36px;" class="form-control" placeholder="Username" name="uname">
 					</div>
 					<div class="input-group">
-						<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-						<input type="password" class="form-control" placeholder="Password" name="pass">
+						<span class="input-group-addon"><span class="fa fa-lock"></span></span>
+						<input type="password" style="margin-top: 0; height: 36px;;" class="form-control" placeholder="Password" name="pass">
 					</div>
 					<div class="input-group">			
 						<input type="submit" class="btn btn-primary" value="Tambahkan Admin">

@@ -12,7 +12,7 @@
                             <a class="nav-link color-white" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link color-white" href="#">Promo</a>
+                            <a class="nav-link color-white" href="promo.php">Promo</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle color-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

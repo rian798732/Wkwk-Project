@@ -24,7 +24,7 @@ if($jum == 0){
 	<form action="cari_promo_act.php" method="get">
 	<div class="input-group col-md-5 col-md-offset-7">
 		<button class="btn btn-primary" id="basic-addon1"><span class="fa fa-search"></span></button>
-		<input type="text" style="width:70%; margin: 0;" class="form-control" placeholder="Cari Barang .." aria-describedby="basic-addon1" name="cari">	
+		<input type="text" style="width:70%; margin: 0;" class="form-control" placeholder="Cari Promo .." aria-describedby="basic-addon1" name="cari">	
 	</div>
 </form>
 </div>

@@ -9,7 +9,7 @@ include_once("scripts/config.php");
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SELAMAT DATANG</title>
+    <title>WKACC WEBSITE | WELCOME</title>
     <?php include 'scripts/komponen.php';?>
 </head>
 
@@ -24,7 +24,7 @@ include_once("scripts/config.php");
             <div class="right-content">
                 <div class="row items-group">
                     <?php
-                        $per_hal=30;
+                        $per_hal=12;
                         $jumlah_record=mysqli_query($mysqli,"SELECT count(*) from acc_hp");
                         // $jum=mysqli_query($mysqli, '$jumlah_record');
                         $jum = mysqli_fetch_array($jumlah_record, MYSQLI_NUM);

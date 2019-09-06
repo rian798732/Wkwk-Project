@@ -3,17 +3,17 @@ $active = "ganti_pass";
 include 'layouts/header.php';
 ?>
 
-<h3><span class="glyphicon glyphicon-briefcase"></span>  Password</h3>
+<h3><span class="fa fa-lock"></span>  Password</h3>
 <br/><br/>
 <?php 
 if(isset($_GET['pesan'])){
-	$pesan=mysqli_real_escape_string($koneksi, $_GET['pesan']);
+	$pesan=mysqli_real_escape_string($mysqli, $_GET['pesan']);
 	if($pesan=="gagal"){
 		echo "<div class='alert alert-danger'>Password gagal di ganti !!     Periksa Kembali Password yang anda masukkan !!</div>";
-	}else if($pesan=="tdksama"){
-		echo "<div class='alert alert-warning'>Password yang anda masukkan tidak sesuai  !!     silahkan ulangi !! </div>";
+	}else if($pesan=="tidaksama"){
+		echo "<div class='alert alert-warning'>Password baru yang anda masukkan tidak sama  !!     Silahkan ulangi lagi!! </div>";
 	}else if($pesan=="oke"){
-		echo "<div class='alert alert-success'>Password yang anda masukkan tidak sesuai  !!     silahkan ulangi !! </div>";
+		echo "<div class='alert alert-success'>BERHASIL!! Password Sukses Di ganti</div>";
 	}
 }
 ?>
