@@ -17,7 +17,7 @@
         while($b=mysqli_fetch_array($hasil)){
     ?>
     <img class="image-item-dashboard" src="images/logo.jpg">
-    <table class="table table-striped tabel-detail">
+    <table class="table table-striped tabel-detail" style="left: 35%;">
         <tbody>
             <tr> 
                 <td style="width: 260px;">ID PROMO</td>

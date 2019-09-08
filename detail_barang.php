@@ -54,18 +54,18 @@
                 <div class="row padding-0">
                     <div class="col-md-12" style="margin-bottom: 10px;"><center>Pesan sekarang melalui :</center></div>
                     <div class="col-md-5 padding-0" style="margin: 5px 5px; <?php if($b['link_tokped'] == null){ echo 'display: none;';}?>">
-                        <a href="<?php echo $b['link_tokped']?>" class="btn btn-success" style="width: 100%; color: white; background: #44953e; border-color: #44953e;">Tokopedia</a>
+                        <a href="<?php echo $b['link_tokped']?>" class="btn btn-success" style="width: 100%; color: white; background: #44953e; border-color: #44953e;"><img class="logo_tokopedia" src="images/tokopedia.png" style="width: 20px; height: 20px; margin-right: 10px;"><span>Tokopedia</span></a>
                     </div>
 
                     <div class="col-md-5 padding-0" style="margin: 5px 5px; <?php if($b['link_lazada'] == null){ echo 'display: none;';}?>">
-                        <a href="<?php echo $b['link_lazada']?>" class="btn btn-warning" style="width: 100%; color: white; background: #f79108; border-color: #f79108;">Lazada</a>
+                        <a href="<?php echo $b['link_lazada']?>" class="btn btn-secondary" style="width: 100%;color: black;background: #e2e2e2;border-color: #f1f1f1;"><img class="logo_lazada" src="images/lazada.png" style="width: 25px; height: 25px; margin-right: 10px;"><span>Lazada</span></a>
                     </div>
 
                     <div class="col-md-5 padding-0" style="margin: 5px 5px; <?php if($b['link_shopee'] == null){ echo 'display: none;';}?>">
-                        <a href="<?php echo $b['link_shopee']?>" class="btn btn-warning" style="width: 100%; color: white; background: #ff6300;">Shopee</a>
+                        <a href="<?php echo $b['link_shopee']?>" class="btn btn-warning" style="width: 100%; color: white; background: #ff6300; border-color: #ff6300;"><img class="logo_lazada" src="images/Shopee.png" style="width: 25px; height: 25px; filter: brightness(4.5); margin-right: 10px;"><span>Shopee</span></a>
                     </div>
                     <div class="col-md-5 padding-0" style="margin: 5px 5px;">
-                        <a href="#" class="btn btn-success" style="width: 100%; color: white;">WhatsApp</a>
+                        <a href="https://api.whatsapp.com/send?phone=6288992820089&text=Saya ingin membeli <?php echo $b['name'];?>. Apakah barang tersebut masih ada?" class="btn btn-success" style="width: 100%; color: white; background: #1bd741;"><img class="logo_lazada" src="images/whatsapp.png" style="width: 20px; height: 20px; margin-right: 10px;"><span>Whatsapp</span></a>
                     </div>
                 </div>
                 <!-- <div class="share">
