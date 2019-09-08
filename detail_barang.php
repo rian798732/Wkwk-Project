@@ -65,7 +65,7 @@
                         <a href="<?php echo $b['link_shopee']?>" class="btn btn-warning" style="width: 100%; color: white; background: #ff6300; border-color: #ff6300;"><img class="logo_lazada" src="images/Shopee.png" style="width: 25px; height: 25px; filter: brightness(4.5); margin-right: 10px;"><span>Shopee</span></a>
                     </div>
                     <div class="col-md-5 padding-0" style="margin: 5px 5px;">
-                        <a href="https://api.whatsapp.com/send?phone=6288992820089&text=Saya ingin membeli <?php echo $b['name'];?>. Apakah barang tersebut masih ada?" class="btn btn-success" style="width: 100%; color: white; background: #1bd741;"><img class="logo_lazada" src="images/whatsapp.png" style="width: 20px; height: 20px; margin-right: 10px;"><span>Whatsapp</span></a>
+                        <a href="https://api.whatsapp.com/send?phone=6288992820089&text=Saya ingin membeli <?php echo strtoupper($b['name']);?>. Apakah barang tersebut masih ada?" class="btn btn-success" style="width: 100%; color: white; background: #1bd741;"><img class="logo_lazada" src="images/whatsapp.png" style="width: 20px; height: 20px; margin-right: 10px;"><span>Whatsapp</span></a>
                     </div>
                 </div>
                 <!-- <div class="share">

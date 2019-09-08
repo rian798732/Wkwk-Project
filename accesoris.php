@@ -162,11 +162,12 @@ if($jum == 0){
 				<form action="acc_hp_act.php" method="post" enctype="multipart/form-data">
 					<div class="col-md-4 padding-0 form-group" style="margin-right: 5px;">
 						<label>Nama Barang</label>
-						<input name="nama_barang" type="text" class="form-control" placeholder="Nama Barang">
+						<input name="nama_barang" type="text" class="form-control" placeholder="Nama Barang" required>
 					</div>
+					
 					<div class="col-md-4 padding-0 form-group" style="margin-right: 5px;">
 						<label>Kategori</label>
-						<select class="form-control" id="kategori" name="kategori">
+						<select class="form-control" id="kategori" name="kategori" required>
 							<option>Belum Dipilih</option>
 							<?php
 								$kategori = mysqli_query($mysqli, "select * from kategori");
@@ -184,11 +185,11 @@ if($jum == 0){
 					</div>
                     <div class="col-md-3 padding-0 form-group" style="margin-right: 10px;">
 						<label>Harga</label>
-						<input name="harga" type="text" class="form-control" placeholder="Harga">
+						<input name="harga" type="text" class="form-control" placeholder="Harga" required>
 					</div>
                     <div class="col-md-3 padding-0 form-group" style="margin-right: 10px;">
 						<label>Label</label>
-						<select class="form-control" id="kategori" name="label">
+						<select class="form-control" id="kategori" name="label" required>
 							<option>Belum Dipilih</option>
 							<?php
 								$label = mysqli_query($mysqli, "select * from label");
@@ -218,7 +219,7 @@ if($jum == 0){
                     </div>
 					<div class="col-md-6 form-group padding-0">
 						<label>Gambar</label>
-						<input type="file" name="foto"> <span style="color: red;"><br/>* Pastikan ukuran gambar < 2MB atau ambil gambar yang ada di tokopedia</span>
+						<input type="file" name="foto" required> <span style="color: red;"><br/>* Pastikan ukuran gambar < 2MB atau ambil gambar yang ada di tokopedia</span>
                     </div>
 					<div class="col-md-12 form-group padding-0" style="min-height: 50px;">
 						<label>Deskripsi</label>
